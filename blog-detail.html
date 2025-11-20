@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post | MadAboutMarketing</title>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              "fade-in": "fadeIn 0.8s ease-in-out",
+              "slide-up": "slideUp 0.8s ease-out",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              slideUp: {
+                "0%": { transform: "translateY(20px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1f2937;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #f59e0b;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d97706;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .prose h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+      .prose h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      .prose p {
+        margin-bottom: 1.25rem;
+        line-height: 1.75;
+      }
+      .prose ul {
+        list-style-type: disc;
+        margin-left: 1.5rem;
+        margin-bottom: 1.25rem;
+      }
+      .prose li {
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-800 text-white font-sans overflow-x-hidden">
+    <!-- HEADER -->
+    <header
+      class="w-full bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800 px-6 py-4 fixed top-0 z-50 shadow-lg transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <div class="rounded">
+            <img
+              src="./images/logo.jpg"
+              alt="MadAboutMarketing Logo"
+              class="rounded w-6 h-6"
+            />
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight">Mad About Marketing</h1>
+        </div>
+
+        <!-- Nav -->
+        <nav class="hidden md:flex space-x-8 text-sm font-semibold">
+          <a
+            href="index.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            HOME
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="services.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            SERVICES
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="projects.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            PROJECTS
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="blog.html"
+            class="text-amber-400 transition-all duration-300 relative group"
+          >
+            BLOG
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-amber-400"></span>
+          </a>
+          <a
+            href="contact.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            CONTACT
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </nav>
+
+        <!-- Call -->
+        <div
+          class="hidden md:flex items-center space-x-3 bg-[#2B2B2B]/50 rounded-full px-4 py-2 hover:bg-[#2B2B2B]/70 transition-all duration-300"
+        >
+          <div class="bg-amber-500 p-3 rounded-full w-10 h-10 flex items-center justify-center">
+            <i class="fas fa-phone text-black"></i>
+          </div>
+          <div>
+            <p class="text-xs">Call Anytime</p>
+            <p class="font-bold">+88 01750050088</p>
+          </div>
+        </div>
+
+        <!-- Mobile -->
+        <button
+          id="mobileMenuButton"
+          aria-controls="mobileNav"
+          aria-expanded="false"
+          class="md:hidden flex flex-col space-y-1"
+        >
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+        </button>
+        
+        <!-- Mobile nav panel -->
+        <div
+          id="mobileNav"
+          class="fixed right-0 top-0 w-3/4 max-w-xs h-full p-6 transform translate-x-full transition-transform duration-300 z-50 md:hidden shadow-2xl"
+          aria-hidden="true"
+        >
+          <div
+            id="mobileNavPanel"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center space-x-2">
+                <div class="bg-amber-500 p-1 rounded">
+                  <img
+                    src="images/logo.jpg"
+                    alt="MadAboutMarketing Logo"
+                    class="w-6 h-6"
+                  />
+                </div>
+                <h2 class="font-bold">Mad About Marketing</h2>
+              </div>
+              <button
+                id="mobileClose"
+                aria-label="Close menu"
+                class="text-gray-300"
+              >
+                ✕
+              </button>
+            </div>
+            <nav class="flex flex-col gap-4">
+              <a href="index.html" class="text-white font-semibold">Home</a>
+              <a href="services.html" class="text-white font-semibold">Services</a>
+              <a href="projects.html" class="text-white font-semibold">Projects</a>
+              <a href="blog.html" class="text-amber-400 font-semibold">Blog</a>
+              <a href="contact.html" class="text-white font-semibold">Contact</a>
+            </nav>
+          </div>
+        </div>
+    </header>
+
+    <!-- BLOG HERO -->
+    <section class="relative overflow-hidden bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800 pt-32 pb-12">
+      <div class="max-w-4xl mx-auto px-6">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center text-sm text-gray-300 mb-8 animate-fade-in">
+          <a href="index.html" class="hover:text-amber-400 transition-colors">Home</a>
+          <i class="fas fa-chevron-right mx-2 text-xs"></i>
+          <a href="blog.html" class="hover:text-amber-400 transition-colors">Blog</a>
+          <i class="fas fa-chevron-right mx-2 text-xs"></i>
+          <span class="text-amber-400">Article</span>
+        </nav>
+
+        <!-- Category & Date -->
+        <div class="flex items-center gap-4 mb-6 animate-slide-up">
+          <span class="bg-amber-500/20 text-amber-400 px-4 py-2 rounded-full text-sm font-semibold">
+            Digital Marketing
+          </span>
+          <span class="text-gray-300 text-sm flex items-center">
+            <i class="fas fa-calendar mr-2"></i> November 15, 2024
+          </span>
+          <span class="text-gray-300 text-sm flex items-center">
+            <i class="fas fa-clock mr-2"></i> 8 min read
+          </span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 animate-slide-up">
+          The Complete Guide to Digital Marketing in 2024
+        </h1>
+
+        <!-- Author Info -->
+        <div class="flex items-center gap-4 animate-slide-up">
+          <img
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            alt="John Smith"
+            class="w-14 h-14 rounded-full border-2 border-amber-500"
+          />
+          <div>
+            <p class="font-semibold text-lg">John Smith</p>
+            <p class="text-gray-400 text-sm">Marketing Director at MadAboutMarketing</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED IMAGE -->
+    <section class="py-8 bg-gray-800">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl animate-fade-in">
+          <img
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf"
+            alt="Blog Featured Image"
+            class="w-full h-auto"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG CONTENT -->
+    <section class="py-12 bg-gray-800">
+      <div class="max-w-4xl mx-auto px-6">
+        <article class="prose prose-lg max-w-none text-gray-300">
+          <p class="text-xl text-gray-200 leading-relaxed mb-8">
+            In today's fast-paced digital landscape, businesses must stay ahead of the curve to remain competitive. 
+            This comprehensive guide explores the most effective digital marketing strategies for 2024 and beyond.
+          </p>
+
+          <h2 class="text-white">Understanding the Digital Marketing Ecosystem</h2>
+          <p>
+            Digital marketing encompasses all marketing efforts that use electronic devices or the internet. 
+            Businesses leverage digital channels such as search engines, social media, email, and websites 
+            to connect with current and prospective customers.
+          </p>
+
+          <p>
+            The beauty of digital marketing lies in its measurability. Unlike traditional marketing methods, 
+            digital campaigns can be tracked, analyzed, and optimized in real-time, providing unprecedented 
+            insights into customer behavior and campaign performance.
+          </p>
+
+          <h2 class="text-white">Key Digital Marketing Channels</h2>
+          
+          <h3 class="text-white">1. Search Engine Optimization (SEO)</h3>
+          <p>
+            SEO remains one of the most powerful tools in a marketer's arsenal. By optimizing your website 
+            and content for search engines, you can increase organic visibility and drive qualified traffic 
+            to your site without paying for ads.
+          </p>
+
+          <ul class="text-gray-300">
+            <li>Conduct thorough keyword research to understand what your audience is searching for</li>
+            <li>Create high-quality, relevant content that addresses user intent</li>
+            <li>Optimize technical aspects like site speed, mobile responsiveness, and URL structure</li>
+            <li>Build authoritative backlinks from reputable websites in your industry</li>
+          </ul>
+
+          <h3 class="text-white">2. Content Marketing</h3>
+          <p>
+            Content is king in the digital world. Creating valuable, relevant content helps establish your 
+            brand as an industry authority while attracting and engaging your target audience.
+          </p>
+
+          <p>
+            Successful content marketing involves understanding your audience's pain points and creating 
+            resources that provide genuine value—whether that's blog posts, videos, infographics, or podcasts.
+          </p>
+
+          <h3 class="text-white">3. Social Media Marketing</h3>
+          <p>
+            Social media platforms offer unparalleled opportunities to connect with your audience on a 
+            personal level. Each platform has its unique characteristics and audience demographics, so 
+            it's essential to tailor your approach accordingly.
+          </p>
+
+          <h2 class="text-white">Emerging Trends for 2024</h2>
+          <p>
+            As we move forward, several trends are shaping the future of digital marketing:
+          </p>
+
+          <ul class="text-gray-300">
+            <li><strong>AI and Machine Learning:</strong> Leveraging AI for personalization and predictive analytics</li>
+            <li><strong>Voice Search Optimization:</strong> Adapting content for voice-activated devices</li>
+            <li><strong>Video Marketing:</strong> Short-form and long-form video content dominance</li>
+            <li><strong>Privacy-First Marketing:</strong> Navigating cookie-less tracking and data privacy regulations</li>
+            <li><strong>Interactive Content:</strong> Quizzes, polls, and augmented reality experiences</li>
+          </ul>
+
+          <h2 class="text-white">Measuring Success</h2>
+          <p>
+            The key to successful digital marketing is continuous measurement and optimization. Track metrics 
+            that align with your business objectives, such as:
+          </p>
+
+          <ul class="text-gray-300">
+            <li>Website traffic and engagement metrics</li>
+            <li>Conversion rates and cost per acquisition</li>
+            <li>Return on investment (ROI) for each channel</li>
+            <li>Customer lifetime value (CLV)</li>
+            <li>Brand awareness and sentiment metrics</li>
+          </ul>
+
+          <h2 class="text-white">Conclusion</h2>
+          <p>
+            Digital marketing is not a set-it-and-forget-it endeavor. It requires ongoing attention, testing, 
+            and optimization. By staying informed about industry trends, understanding your audience, and 
+            leveraging the right tools and strategies, you can build a robust digital marketing presence 
+            that drives real business results.
+          </p>
+
+          <p>
+            Remember, the most successful digital marketing strategies are those that put the customer first, 
+            deliver value, and build lasting relationships rather than just pushing for quick sales.
+          </p>
+        </article>
+
+        <!-- Share Section -->
+        <div class="mt-12 pt-8 border-t border-gray-700">
+          <div class="flex items-center justify-between flex-wrap gap-4">
+            <div>
+              <p class="text-gray-400 mb-2">Share this article:</p>
+              <div class="flex gap-3">
+                <a href="#" class="bg-gray-900 p-3 rounded-full hover:bg-amber-500 hover:text-black transition-colors">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="bg-gray-900 p-3 rounded-full hover:bg-amber-500 hover:text-black transition-colors">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="bg-gray-900 p-3 rounded-full hover:bg-amber-500 hover:text-black transition-colors">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="bg-gray-900 p-3 rounded-full hover:bg-amber-500 hover:text-black transition-colors">
+                  <i class="fab fa-pinterest"></i>
+                </a>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-gray-400">Tags:</span>
+              <span class="bg-gray-900 px-3 py-1 rounded-full text-sm">Digital Marketing</span>
+              <span class="bg-gray-900 px-3 py-1 rounded-full text-sm">SEO</span>
+              <span class="bg-gray-900 px-3 py-1 rounded-full text-sm">Strategy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Author Bio -->
+        <div class="mt-12 bg-gray-900 rounded-2xl p-8">
+          <div class="flex gap-6 items-start">
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="John Smith"
+              class="w-24 h-24 rounded-full border-2 border-amber-500"
+            />
+            <div>
+              <h3 class="text-2xl font-bold mb-2">About John Smith</h3>
+              <p class="text-gray-400 mb-4">
+                John is a seasoned digital marketing professional with over 10 years of experience helping 
+                businesses grow their online presence. As Marketing Director at MadAboutMarketing, he leads 
+                strategic initiatives and shares his expertise through regular blog posts and speaking engagements.
+              </p>
+              <div class="flex gap-3">
+                <a href="#" class="text-amber-500 hover:text-amber-400 transition-colors">
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="text-amber-500 hover:text-amber-400 transition-colors">
+                  <i class="fab fa-twitter text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOMMENDED POSTS -->
+    <section class="py-20 bg-gray-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-extrabold mb-12">Recommended Articles</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Recommended Post 1 -->
+          <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group">
+            <div class="relative overflow-hidden h-48">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+                alt="Post"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 group-hover:text-amber-400 transition-colors">
+                AI in Web Development
+              </h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Discover how AI is transforming the way we build websites.
+              </p>
+              <a
+                href="blog-detail.html"
+                class="text-amber-500 font-semibold hover:text-amber-400 transition-colors inline-flex items-center"
+              >
+                Read More
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Recommended Post 2 -->
+          <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group">
+            <div class="relative overflow-hidden h-48">
+              <img
+                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7"
+                alt="Post"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 group-hover:text-amber-400 transition-colors">
+                Social Media Strategies
+              </h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Effective tactics to grow your social media presence.
+              </p>
+              <a
+                href="blog-detail.html"
+                class="text-amber-500 font-semibold hover:text-amber-400 transition-colors inline-flex items-center"
+              >
+                Read More
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Recommended Post 3 -->
+          <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group">
+            <div class="relative overflow-hidden h-48">
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+                alt="Post"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 group-hover:text-amber-400 transition-colors">
+                SEO Best Practices
+              </h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Master SEO with these proven optimization techniques.
+              </p>
+              <a
+                href="blog-detail.html"
+                class="text-amber-500 font-semibold hover:text-amber-400 transition-colors inline-flex items-center"
+              >
+                Read More
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white border-t border-gray-800">
+      <div class="border-t border-gray-700 pt-10 pb-16">
+        <div
+          class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+        >
+          <div>
+            <div class="flex items-center mb-4 space-x-2">
+              <div class="bg-amber-500 p-2 rounded">
+                <i class="fas fa-chart-line text-black"></i>
+              </div>
+              <h2 class="text-2xl font-semibold">Mad About Marketing</h2>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Delivering innovative digital marketing solutions that drive growth.
+            </p>
+            <form class="flex bg-white rounded-lg overflow-hidden shadow-lg">
+              <input
+                type="email"
+                placeholder="Email address"
+                class="flex-1 px-4 py-2 text-black outline-none"
+              />
+              <button
+                type="submit"
+                class="bg-amber-500 text-black px-4 text-lg hover:bg-amber-600 transition-colors duration-300"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Link</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="index.html" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Home
+                </a>
+              </li>
+              <li>
+                <a href="services.html" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Services
+                </a>
+              </li>
+              <li>
+                <a href="projects.html" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Projects
+                </a>
+              </li>
+              <li>
+                <a href="blog.html" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Blog
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> About
+                </a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Team
+                </a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Reviews
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact</h3>
+            <ul class="space-y-3 text-gray-400">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt text-amber-500 mr-3 mt-1"></i>
+                55 Main Street, 2nd block<br />Melbourne, Australia
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope text-amber-500 mr-3"></i>
+                support@gmail.com
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone text-amber-500 mr-3"></i> +000 (123) 44 55
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-700 py-6 text-center text-gray-400 text-sm">
+        <p>© 2023 Mad About Marketing. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-8 right-8 bg-amber-500 text-white p-3 rounded-full shadow-lg hover:bg-amber-600 transition-all duration-300 transform translate-y-16 opacity-0"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="mobile-nav.js"></script>
+
+    <script>
+      const backToTopButton = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove("translate-y-16", "opacity-0");
+          backToTopButton.classList.add("translate-y-0", "opacity-100");
+        } else {
+          backToTopButton.classList.remove("translate-y-0", "opacity-100");
+          backToTopButton.classList.add("translate-y-16", "opacity-0");
+        }
+      });
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      const header = document.querySelector("header");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 100) {
+          header.classList.add("shadow-xl", "py-3");
+          header.classList.remove("py-4");
+        } else {
+          header.classList.remove("shadow-xl", "py-3");
+          header.classList.add("py-4");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | MadAboutMarketing</title>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            "fade-in": "fadeIn 0.8s ease-in-out",
+            "slide-up": "slideUp 0.8s ease-out",
+            "slide-left": "slideLeft 0.8s ease-out",
+            "scale-up": "scaleUp 0.5s ease-out",
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": { opacity: "0" },
+              "100%": { opacity: "1" },
+            },
+            slideUp: {
+              "0%": { transform: "translateY(20px)", opacity: "0" },
+              "100%": { transform: "translateY(0)", opacity: "1" },
+            },
+            slideLeft: {
+              "0%": { transform: "translateX(20px)", opacity: "0" },
+              "100%": { transform: "translateX(0)", opacity: "1" },
+            },
+            scaleUp: {
+              "0%": { transform: "scale(0.95)", opacity: "0" },
+              "100%": { transform: "scale(1)", opacity: "1" },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #ffffff;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #f59e0b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d97706;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: #f59e0b;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-800 text-white font-sans overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header
+      class="w-full text-white bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800 px-6 py-4 fixed top-0 z-50 shadow-lg transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <div class="rounded">
+            <img
+              src="./images/logo.jpg"
+              alt="MadAboutMarketing Logo"
+              class="rounded w-6 h-6"
+            />
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight">Mad About Marketing</h1>
+        </div>
+
+        <!-- Nav -->
+        <nav class="hidden md:flex space-x-8 text-sm font-semibold">
+          <a
+            href="index.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            HOME
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="services.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            SERVICES
+            <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+                  ></span>
+          </a>
+          <a
+          href="projects.html"
+          class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+          PROJECTS
+          <span
+          class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+        href="blog.html"
+        class="hover:text-amber-400 transition-all duration-300 relative group"
+        >
+        BLOG
+        <span
+        class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>
+      <a
+      href="contact.html"
+      class="text-amber-400 transition-all duration-300 relative group"
+      >
+      CONTACT
+      <span class="absolute bottom-0 left-0 w-full h-0.5 bg-amber-400"></span>
+          </a>
+        </nav>
+
+        <!-- Call -->
+        <div
+          class="hidden md:flex items-center space-x-3 bg-[#2B2B2B]/50 rounded-full px-4 py-2 hover:bg-[#2B2B2B]/70 transition-all duration-300"
+        >
+          <div class="bg-amber-500 p-3 rounded-full w-10 h-10 flex items-center justify-center">
+            <i class="fas fa-phone text-black"></i>
+          </div>
+          <div>
+            <p class="text-xs">Call Anytime</p>
+            <p class="font-bold">+88 01750050088</p>
+          </div>
+        </div>
+
+        <!-- Mobile -->
+        <button
+          id="mobileMenuButton"
+          aria-controls="mobileNav"
+          aria-expanded="false"
+          class="md:hidden flex flex-col space-y-1"
+        >
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+        </button>
+        
+        <!-- Mobile nav panel -->
+        <div
+          id="mobileNav"
+          class="fixed inset-0 z-40 md:hidden pointer-events-none"
+          aria-hidden="true"
+        >
+          <div
+            id="mobileNavPanel"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center space-x-2">
+                <div class="bg-amber-500 p-1 rounded">
+                  <img
+                    src="images/logo.jpg"
+                    alt="MadAboutMarketing Logo"
+                    class="w-6 h-6"
+                  />
+                </div>
+                <h2 class="font-bold">Mad About Marketing</h2>
+              </div>
+              <button
+                id="mobileClose"
+                aria-label="Close menu"
+                class="text-gray-300"
+              >
+                ✕
+              </button>
+            </div>
+            <nav class="flex flex-col gap-4">
+              <a href="index.html" class="text-white font-semibold">Home</a>
+              <a href="services.html" class="text-amber-400 font-semibold">Services</a>
+              <a href="projects.html" class="text-white font-semibold">Projects</a>
+              <a href="blog.html" class="text-white font-semibold">Blog</a>
+              <a href="contact.html" class="text-white font-semibold">Contact</a>
+            </nav>
+          </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800 pt-32 pb-20">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="animate-fade-in">
+          <span class="bg-amber-500/20 text-amber-400 px-6 py-2 rounded-full text-sm font-semibold inline-block mb-6">
+            Get In Touch
+          </span>
+          <h1 class="text-5xl md:text-6xl font-extrabold mb-6 animate-slide-up">
+            Let's Start a Conversation
+          </h1>
+          <p class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto animate-slide-up">
+            Have a project in mind or need expert advice? We're here to help you succeed. 
+            Reach out and let's create something amazing together.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT INFO CARDS -->
+    <section class="py-16 bg-gray-800 -mt-10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="bg-gray-900 rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-scale-up">
+            <div class="bg-amber-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-phone text-black text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Call Us</h3>
+            <p class="text-gray-400 mb-4">Let's have a conversation</p>
+            <a href="tel:+8801750050088" class="text-amber-500 font-semibold hover:text-amber-400 transition-colors">
+              +88 01750050088
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-gray-900 rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-scale-up" style="animation-delay: 0.1s;">
+            <div class="bg-amber-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-envelope text-black text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Email Us</h3>
+            <p class="text-gray-400 mb-4">Drop us a message</p>
+            <a href="mailto:support@gmail.com" class="text-amber-500 font-semibold hover:text-amber-400 transition-colors">
+              support@gmail.com
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-gray-900 rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-scale-up" style="animation-delay: 0.2s;">
+            <div class="bg-amber-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-map-marker-alt text-black text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Visit Us</h3>
+            <p class="text-gray-400 mb-4">Come say hello</p>
+            <p class="text-amber-500 font-semibold">
+              55 Main Street, 2nd block<br />Melbourne, Australia
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM & MAP -->
+    <section class="py-20 bg-gray-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div class="animate-slide-up">
+            <div class="bg-gray-900 rounded-2xl p-8 md:p-12 shadow-2xl">
+              <h2 class="text-3xl font-extrabold mb-4">Send Us a Message</h2>
+              <p class="text-gray-400 mb-8">
+                Fill out the form below and we'll get back to you within 24 hours.
+              </p>
+
+              <form id="contactForm" class="space-y-6">
+                <!-- Name -->
+                <div>
+                  <label for="name" class="block text-sm font-semibold mb-2">
+                    Full Name <span class="text-amber-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white transition-all duration-300"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                <!-- Email -->
+                <div>
+                  <label for="email" class="block text-sm font-semibold mb-2">
+                    Email Address <span class="text-amber-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white transition-all duration-300"
+                    placeholder="john@example.com"
+                  />
+                </div>
+
+                <!-- Phone -->
+                <div>
+                  <label for="phone" class="block text-sm font-semibold mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white transition-all duration-300"
+                    placeholder="+1 (555) 123-4567"
+                  />
+                </div>
+
+                <!-- Subject -->
+                <div>
+                  <label for="subject" class="block text-sm font-semibold mb-2">
+                    Subject <span class="text-amber-500">*</span>
+                  </label>
+                  <select
+                    id="subject"
+                    name="subject"
+                    required
+                    class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white transition-all duration-300"
+                  >
+                    <option value="">Select a subject</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="seo">SEO Services</option>
+                    <option value="webdev">Web Development</option>
+                    <option value="social">Social Media Marketing</option>
+                    <option value="content">Content Marketing</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <!-- Message -->
+                <div>
+                  <label for="message" class="block text-sm font-semibold mb-2">
+                    Message <span class="text-amber-500">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows="5"
+                    class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white transition-all duration-300 resize-none"
+                    placeholder="Tell us about your project..."
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                  type="submit"
+                  class="w-full bg-amber-500 text-black font-bold py-4 rounded-lg hover:bg-amber-600 transition-all duration-300 transform hover:scale-[1.02] shadow-lg"
+                >
+                  Send Message
+                  <i class="fas fa-paper-plane ml-2"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Map & Business Hours -->
+          <div class="space-y-8 animate-slide-left">
+            <!-- Map -->
+            <div class="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl h-96">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093745!2d144.95373531531637!3d-37.81720997975159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sau!4v1635390621192!5m2!1sen!2sau"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                class="grayscale hover:grayscale-0 transition-all duration-500"
+              ></iframe>
+            </div>
+
+            <!-- Business Hours -->
+            <div class="bg-gray-900 rounded-2xl p-8 shadow-2xl">
+              <h3 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-clock text-amber-500 mr-3"></i>
+                Business Hours
+              </h3>
+              <div class="space-y-4">
+                <div class="flex justify-between items-center pb-4 border-b border-gray-800">
+                  <span class="text-gray-300">Monday - Friday</span>
+                  <span class="font-semibold text-amber-500">9:00 AM - 6:00 PM</span>
+                </div>
+                <div class="flex justify-between items-center pb-4 border-b border-gray-800">
+                  <span class="text-gray-300">Saturday</span>
+                  <span class="font-semibold text-amber-500">10:00 AM - 4:00 PM</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-300">Sunday</span>
+                  <span class="font-semibold text-red-400">Closed</span>
+                </div>
+              </div>
+
+              <!-- Social Media -->
+              <div class="mt-8 pt-8 border-t border-gray-800">
+                <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                <div class="flex gap-4">
+                  <a
+                    href="#"
+                    class="bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center hover:bg-amber-500 hover:text-black transition-all duration-300 transform hover:scale-110"
+                  >
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center hover:bg-amber-500 hover:text-black transition-all duration-300 transform hover:scale-110"
+                  >
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center hover:bg-amber-500 hover:text-black transition-all duration-300 transform hover:scale-110"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center hover:bg-amber-500 hover:text-black transition-all duration-300 transform hover:scale-110"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-extrabold mb-6">Ready to Grow Your Business?</h2>
+        <p class="text-gray-300 text-lg mb-8">
+          Let's discuss how our digital marketing solutions can help you achieve your goals.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#contactForm"
+            class="bg-amber-500 text-black font-bold px-8 py-4 rounded-lg hover:bg-amber-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            Get Started
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+          <a
+            href="services.html"
+            class="bg-transparent border-2 border-amber-500 text-amber-500 font-bold px-8 py-4 rounded-lg hover:bg-amber-500 hover:text-black transition-all duration-300 transform hover:scale-105"
+          >
+            View Services
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white border-t border-gray-800">
+      <div class="border-t border-gray-700 pt-10 pb-16">
+        <div
+          class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+        >
+          <div>
+            <div class="flex items-center mb-4 space-x-2">
+              <div class="bg-amber-500 p-2 rounded">
+                <i class="fas fa-chart-line text-black"></i>
+              </div>
+              <h2 class="text-2xl font-semibold">Mad About Marketing</h2>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Delivering innovative digital marketing solutions that drive growth.
+            </p>
+            <form class="flex bg-white rounded-lg overflow-hidden shadow-lg">
+              <input
+                type="email"
+                placeholder="Email address"
+                class="flex-1 px-4 py-2 text-black outline-none"
+              />
+              <button
+                type="submit"
+                class="bg-amber-500 text-black px-4 text-lg hover:bg-amber-600 transition-colors duration-300"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Link</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="index.html" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Home
+                </a>
+              </li>
+              <li>
+                <a href="services.html" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Services
+                </a>
+              </li>
+              <li>
+                <a href="projects.html" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Projects
+                </a>
+              </li>
+              <li>
+                <a href="blog.html" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Blog
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> About
+                </a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Team
+                </a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Reviews
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact</h3>
+            <ul class="space-y-3 text-gray-400">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt text-amber-500 mr-3 mt-1"></i>
+                55 Main Street, 2nd block<br />Melbourne, Australia
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope text-amber-500 mr-3"></i>
+                support@gmail.com
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone text-amber-500 mr-3"></i> +000 (123) 44 55
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-700 py-6 text-center text-gray-400 text-sm">
+        <p>© 2023 Mad About Marketing. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-8 right-8 bg-amber-500 text-white p-3 rounded-full shadow-lg hover:bg-amber-600 transition-all duration-300 transform translate-y-16 opacity-0"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="mobile-nav.js"></script>
+
+    <script>
+      const backToTopButton = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove("translate-y-16", "opacity-0");
+          backToTopButton.classList.add("translate-y-0", "opacity-100");
+        } else {
+          backToTopButton.classList.remove("translate-y-0", "opacity-100");
+          backToTopButton.classList.add("translate-y-16", "opacity-0");
+        }
+      });
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      const header = document.querySelector("header");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 100) {
+          header.classList.add("shadow-xl", "py-3");
+          header.classList.remove("py-4");
+        } else {
+          header.classList.remove("shadow-xl", "py-3");
+          header.classList.add("py-4");
+        }
+      });
+
+      // Form submission handler
+      const contactForm = document.getElementById("contactForm");
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Thank you for your message! We'll get back to you within 24 hours.");
+        contactForm.reset();
+      });
+    </script>
+  </body>
+</html>

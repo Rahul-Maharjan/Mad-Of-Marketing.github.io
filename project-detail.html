@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Details | MadAboutMarketing</title>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              "fade-in": "fadeIn 0.8s ease-in-out",
+              "slide-up": "slideUp 0.8s ease-out",
+              "slide-left": "slideLeft 0.8s ease-out",
+              "scale-up": "scaleUp 0.6s ease-out",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              slideUp: {
+                "0%": { transform: "translateY(20px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
+              slideLeft: {
+                "0%": { transform: "translateX(20px)", opacity: "0" },
+                "100%": { transform: "translateX(0)", opacity: "1" },
+              },
+              scaleUp: {
+                "0%": { transform: "scale(0.95)", opacity: "0" },
+                "100%": { transform: "scale(1)", opacity: "1" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1f2937;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #f59e0b;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d97706;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-800 text-white font-sans overflow-x-hidden">
+    <!-- HEADER -->
+    <header
+      class="w-full bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800 px-6 py-4 fixed top-0 z-50 shadow-lg transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <div class="rounded">
+            <img
+              src="./images/logo.jpg"
+              alt="MadAboutMarketing Logo"
+              class="rounded w-6 h-6"
+            />
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight">Mad About Marketing</h1>
+        </div>
+
+        <!-- Nav -->
+        <nav class="hidden md:flex space-x-8 text-sm font-semibold">
+          <a
+            href="index.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            HOME
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="services.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            SERVICES
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="projects.html"
+            class="text-amber-400 transition-all duration-300 relative group"
+          >
+            PROJECTS
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-amber-400"></span>
+          </a>
+          <a
+            href="blog.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            BLOG
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="contact.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            CONTACT
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </nav>
+
+        <!-- Call -->
+        <div
+          class="hidden md:flex items-center space-x-3 bg-[#2B2B2B]/50 rounded-full px-4 py-2 hover:bg-[#2B2B2B]/70 transition-all duration-300"
+        >
+          <div class="bg-amber-500 p-3 rounded-full w-10 h-10 flex items-center justify-center">
+            <i class="fas fa-phone text-black"></i>
+          </div>
+          <div>
+            <p class="text-xs">Call Anytime</p>
+            <p class="font-bold">+88 01750050088</p>
+          </div>
+        </div>
+
+        <!-- Mobile -->
+        <button
+          id="mobileMenuButton"
+          aria-controls="mobileNav"
+          aria-expanded="false"
+          class="md:hidden flex flex-col space-y-1"
+        >
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+        </button>
+        
+        <!-- Mobile nav panel -->
+        <div
+          id="mobileNav"
+          class="fixed inset-0 z-40 md:hidden pointer-events-none"
+          aria-hidden="true"
+        >
+          <div
+            id="mobileNavPanel"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center space-x-2">
+                <div class="bg-amber-500 p-1 rounded">
+                  <img
+                    src="images/logo.jpg"
+                    alt="MadAboutMarketing Logo"
+                    class="w-6 h-6"
+                  />
+                </div>
+                <h2 class="font-bold">Mad About Marketing</h2>
+              </div>
+              <button
+                id="mobileClose"
+                aria-label="Close menu"
+                class="text-gray-300"
+              >
+                ✕
+              </button>
+            </div>
+            <nav class="flex flex-col gap-4">
+              <a href="index.html" class="text-white font-semibold">Home</a>
+              <a href="services.html" class="text-white font-semibold">Services</a>
+              <a href="projects.html" class="text-amber-400 font-semibold">Projects</a>
+              <a href="blog.html" class="text-white font-semibold">Blog</a>
+              <a href="contact.html" class="text-white font-semibold">Contact</a>
+            </nav>
+          </div>
+        </div>
+    </header>
+
+    <!-- PROJECT HERO -->
+    <section class="relative overflow-hidden bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800 pt-32 pb-12">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center text-sm text-gray-300 mb-8 animate-fade-in">
+          <a href="index.html" class="hover:text-amber-400 transition-colors">Home</a>
+          <i class="fas fa-chevron-right mx-2 text-xs"></i>
+          <a href="projects.html" class="hover:text-amber-400 transition-colors">Projects</a>
+          <i class="fas fa-chevron-right mx-2 text-xs"></i>
+          <span class="text-amber-400" id="breadcrumbTitle">Project</span>
+        </nav>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left: Project Info -->
+          <div class="animate-slide-up">
+            <div class="flex items-center gap-3 mb-6">
+              <span id="categoryBadge" class="bg-amber-500 text-black px-6 py-2 rounded-full text-sm font-bold">
+                E-Commerce
+              </span>
+              <span id="typeBadge" class="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-semibold">
+                Web Design
+              </span>
+            </div>
+
+            <h1 id="projectTitle" class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+              Modern E-Commerce Platform
+            </h1>
+
+            <p id="projectDescription" class="text-gray-300 text-lg mb-8 leading-relaxed">
+              A fully responsive online store with advanced product filtering, secure payment integration, 
+              and real-time inventory management built with modern technologies.
+            </p>
+
+            <!-- Project Meta -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+              <div class="text-center bg-gray-900/50 backdrop-blur-sm rounded-xl p-4">
+                <div class="text-amber-500 text-2xl font-bold mb-1" id="projectYear">2024</div>
+                <div class="text-gray-400 text-sm">Year</div>
+              </div>
+              <div class="text-center bg-gray-900/50 backdrop-blur-sm rounded-xl p-4">
+                <div class="text-amber-500 text-2xl font-bold mb-1" id="projectDuration">6 months</div>
+                <div class="text-gray-400 text-sm">Duration</div>
+              </div>
+              <div class="text-center bg-gray-900/50 backdrop-blur-sm rounded-xl p-4">
+                <div class="text-amber-500 text-2xl font-bold mb-1">45%</div>
+                <div class="text-gray-400 text-sm">ROI Increase</div>
+              </div>
+              <div class="text-center bg-gray-900/50 backdrop-blur-sm rounded-xl p-4">
+                <div class="text-amber-500 text-2xl font-bold mb-1">5 <i class="fas fa-star text-amber-500 text-base"></i></div>
+                <div class="text-gray-400 text-sm">Client Rating</div>
+              </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="contact.html"
+                class="bg-amber-500 text-black font-bold px-8 py-4 rounded-full hover:bg-amber-600 transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center"
+              >
+                <i class="fas fa-rocket mr-2"></i>
+                Start Your Project
+              </a>
+              <a
+                href="#details"
+                class="border-2 border-amber-500 text-amber-500 font-bold px-8 py-4 rounded-full hover:bg-amber-500 hover:text-black transition-all duration-300 inline-flex items-center"
+              >
+                <i class="fas fa-arrow-down mr-2"></i>
+                View Details
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Featured Image -->
+          <div class="animate-slide-left">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                id="projectImage"
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+                alt="Project"
+                class="w-full h-auto"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT DETAILS -->
+    <section id="details" class="py-20 bg-gray-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-3 gap-12">
+          <!-- Main Content -->
+          <div class="lg:col-span-2 space-y-12">
+            <!-- Overview -->
+            <div class="animate-fade-in">
+              <h2 class="text-3xl font-extrabold mb-6 flex items-center">
+                <i class="fas fa-info-circle text-amber-500 mr-3"></i>
+                Project Overview
+              </h2>
+              <div class="bg-gray-900 rounded-2xl p-8 space-y-4">
+                <p class="text-gray-300 leading-relaxed">
+                  This project involved creating a comprehensive e-commerce solution from the ground up. 
+                  Our team worked closely with the client to understand their business requirements and 
+                  deliver a platform that not only meets but exceeds their expectations.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                  The platform features a modern, intuitive interface that provides an exceptional user 
+                  experience across all devices. We implemented advanced filtering capabilities, allowing 
+                  customers to easily find exactly what they're looking for.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                  Security was a top priority throughout the development process. We integrated industry-leading 
+                  payment gateways and implemented robust security measures to protect sensitive customer data.
+                </p>
+              </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="animate-fade-in">
+              <h2 class="text-3xl font-extrabold mb-6 flex items-center">
+                <i class="fas fa-star text-amber-500 mr-3"></i>
+                Key Features
+              </h2>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-900 rounded-xl p-6 hover:bg-gray-900/80 transition-colors">
+                  <div class="bg-amber-500 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-mobile-alt text-black text-xl"></i>
+                  </div>
+                  <h3 class="text-xl font-bold mb-2">Responsive Design</h3>
+                  <p class="text-gray-400">
+                    Fully optimized for mobile, tablet, and desktop devices with seamless transitions.
+                  </p>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl p-6 hover:bg-gray-900/80 transition-colors">
+                  <div class="bg-amber-500 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-shield-alt text-black text-xl"></i>
+                  </div>
+                  <h3 class="text-xl font-bold mb-2">Secure Payments</h3>
+                  <p class="text-gray-400">
+                    Integration with multiple payment gateways including Stripe and PayPal.
+                  </p>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl p-6 hover:bg-gray-900/80 transition-colors">
+                  <div class="bg-amber-500 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-chart-line text-black text-xl"></i>
+                  </div>
+                  <h3 class="text-xl font-bold mb-2">Analytics Dashboard</h3>
+                  <p class="text-gray-400">
+                    Comprehensive analytics to track sales, customer behavior, and inventory.
+                  </p>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl p-6 hover:bg-gray-900/80 transition-colors">
+                  <div class="bg-amber-500 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-boxes text-black text-xl"></i>
+                  </div>
+                  <h3 class="text-xl font-bold mb-2">Inventory Management</h3>
+                  <p class="text-gray-400">
+                    Real-time inventory tracking with automatic low-stock alerts and reordering.
+                  </p>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl p-6 hover:bg-gray-900/80 transition-colors">
+                  <div class="bg-amber-500 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-search text-black text-xl"></i>
+                  </div>
+                  <h3 class="text-xl font-bold mb-2">Advanced Search</h3>
+                  <p class="text-gray-400">
+                    Smart search with filters, sorting, and auto-suggestions for better UX.
+                  </p>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl p-6 hover:bg-gray-900/80 transition-colors">
+                  <div class="bg-amber-500 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-rocket text-black text-xl"></i>
+                  </div>
+                  <h3 class="text-xl font-bold mb-2">Fast Performance</h3>
+                  <p class="text-gray-400">
+                    Optimized for speed with lazy loading, caching, and CDN integration.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Technologies Used -->
+            <div class="animate-fade-in">
+              <h2 class="text-3xl font-extrabold mb-6 flex items-center">
+                <i class="fas fa-code text-amber-500 mr-3"></i>
+                Technologies Used
+              </h2>
+              <div class="bg-gray-900 rounded-2xl p-8">
+                <div class="flex flex-wrap gap-3">
+                  <span class="bg-gray-800 px-6 py-3 rounded-full text-sm font-semibold hover:bg-amber-500 hover:text-black transition-colors cursor-default">
+                    React.js
+                  </span>
+                  <span class="bg-gray-800 px-6 py-3 rounded-full text-sm font-semibold hover:bg-amber-500 hover:text-black transition-colors cursor-default">
+                    Node.js
+                  </span>
+                  <span class="bg-gray-800 px-6 py-3 rounded-full text-sm font-semibold hover:bg-amber-500 hover:text-black transition-colors cursor-default">
+                    MongoDB
+                  </span>
+                  <span class="bg-gray-800 px-6 py-3 rounded-full text-sm font-semibold hover:bg-amber-500 hover:text-black transition-colors cursor-default">
+                    Stripe API
+                  </span>
+                  <span class="bg-gray-800 px-6 py-3 rounded-full text-sm font-semibold hover:bg-amber-500 hover:text-black transition-colors cursor-default">
+                    Tailwind CSS
+                  </span>
+                  <span class="bg-gray-800 px-6 py-3 rounded-full text-sm font-semibold hover:bg-amber-500 hover:text-black transition-colors cursor-default">
+                    AWS
+                  </span>
+                  <span class="bg-gray-800 px-6 py-3 rounded-full text-sm font-semibold hover:bg-amber-500 hover:text-black transition-colors cursor-default">
+                    Redux
+                  </span>
+                  <span class="bg-gray-800 px-6 py-3 rounded-full text-sm font-semibold hover:bg-amber-500 hover:text-black transition-colors cursor-default">
+                    REST API
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Results & Impact -->
+            <div class="animate-fade-in">
+              <h2 class="text-3xl font-extrabold mb-6 flex items-center">
+                <i class="fas fa-trophy text-amber-500 mr-3"></i>
+                Results & Impact
+              </h2>
+              <div class="bg-gradient-to-r from-amber-500/10 to-amber-600/10 border border-amber-500/20 rounded-2xl p-8">
+                <div class="grid md:grid-cols-3 gap-8 text-center mb-8">
+                  <div>
+                    <div class="text-4xl font-extrabold text-amber-500 mb-2">250%</div>
+                    <p class="text-gray-300">Traffic Increase</p>
+                  </div>
+                  <div>
+                    <div class="text-4xl font-extrabold text-amber-500 mb-2">45%</div>
+                    <p class="text-gray-300">Conversion Rate</p>
+                  </div>
+                  <div>
+                    <div class="text-4xl font-extrabold text-amber-500 mb-2">98%</div>
+                    <p class="text-gray-300">Customer Satisfaction</p>
+                  </div>
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                  The platform exceeded all expectations, delivering a 250% increase in organic traffic 
+                  within the first 6 months. The improved user experience led to a 45% boost in conversion 
+                  rates, while customer satisfaction scores reached an impressive 98%.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="space-y-8">
+            <!-- Project Info -->
+            <div class="bg-gray-900 rounded-2xl p-8 sticky top-24 space-y-6 animate-slide-left">
+              <h3 class="text-2xl font-extrabold mb-6">Project Info</h3>
+              
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-user text-amber-500 mt-1"></i>
+                  <div>
+                    <p class="text-gray-400 text-sm mb-1">Client</p>
+                    <p class="font-semibold">TechShop Inc.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-map-marker-alt text-amber-500 mt-1"></i>
+                  <div>
+                    <p class="text-gray-400 text-sm mb-1">Location</p>
+                    <p class="font-semibold">San Francisco, CA</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-calendar text-amber-500 mt-1"></i>
+                  <div>
+                    <p class="text-gray-400 text-sm mb-1">Completed</p>
+                    <p class="font-semibold">October 2024</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-tag text-amber-500 mt-1"></i>
+                  <div>
+                    <p class="text-gray-400 text-sm mb-1">Industry</p>
+                    <p class="font-semibold">E-Commerce / Retail</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <i class="fas fa-users text-amber-500 mt-1"></i>
+                  <div>
+                    <p class="text-gray-400 text-sm mb-1">Team Size</p>
+                    <p class="font-semibold">8 Members</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-6 border-t border-gray-800">
+                <a
+                  href="contact.html"
+                  class="block w-full bg-amber-500 text-black font-bold px-6 py-4 rounded-full hover:bg-amber-600 transition-all duration-300 text-center"
+                >
+                  <i class="fas fa-paper-plane mr-2"></i>
+                  Start Similar Project
+                </a>
+              </div>
+
+              <div class="pt-6 border-t border-gray-800">
+                <p class="text-gray-400 text-sm mb-4">Share this project:</p>
+                <div class="flex gap-3">
+                  <a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-amber-500 hover:text-black transition-colors">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-amber-500 hover:text-black transition-colors">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-amber-500 hover:text-black transition-colors">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-amber-500 hover:text-black transition-colors">
+                    <i class="fab fa-pinterest"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED PROJECTS -->
+    <section class="py-20 bg-gray-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-extrabold mb-4">Related Projects</h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            Discover more success stories from our diverse portfolio
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Related Project 1 -->
+          <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 group">
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692"
+                alt="Project"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-60"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 group-hover:text-amber-400 transition-colors">
+                Corporate Website Redesign
+              </h3>
+              <p class="text-gray-400 text-sm mb-4 line-clamp-3">
+                Complete website overhaul improving user experience and conversion rates.
+              </p>
+              <a
+                href="product-detail.html?id=2"
+                class="text-amber-500 font-semibold hover:text-amber-400 transition-colors inline-flex items-center"
+              >
+                View Details
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Related Project 2 -->
+          <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 group">
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0"
+                alt="Project"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-60"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 group-hover:text-amber-400 transition-colors">
+                Fitness Tracking App
+              </h3>
+              <p class="text-gray-400 text-sm mb-4 line-clamp-3">
+                Cross-platform mobile app with real-time tracking and social features.
+              </p>
+              <a
+                href="product-detail.html?id=3"
+                class="text-amber-500 font-semibold hover:text-amber-400 transition-colors inline-flex items-center"
+              >
+                View Details
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Related Project 3 -->
+          <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 group">
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+                alt="Project"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-60"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 group-hover:text-amber-400 transition-colors">
+                Tech Startup Branding
+              </h3>
+              <p class="text-gray-400 text-sm mb-4 line-clamp-3">
+                Complete brand identity including logo, guidelines, and marketing materials.
+              </p>
+              <a
+                href="product-detail.html?id=4"
+                class="text-amber-500 font-semibold hover:text-amber-400 transition-colors inline-flex items-center"
+              >
+                View Details
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="projects.html"
+            class="inline-flex items-center gap-2 bg-amber-500 text-black font-bold px-8 py-4 rounded-full hover:bg-amber-600 transition-all duration-300 transform hover:scale-105"
+          >
+            View All Projects
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white border-t border-gray-800">
+      <div class="border-t border-gray-700 pt-10 pb-16">
+        <div
+          class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+        >
+          <div>
+            <div class="flex items-center mb-4 space-x-2">
+              <div class="bg-amber-500 p-2 rounded">
+                <i class="fas fa-chart-line text-black"></i>
+              </div>
+              <h2 class="text-2xl font-semibold">Mad About Marketing</h2>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Delivering innovative digital marketing solutions that drive growth.
+            </p>
+            <form class="flex bg-white rounded-lg overflow-hidden shadow-lg">
+              <input
+                type="email"
+                placeholder="Email address"
+                class="flex-1 px-4 py-2 text-black outline-none"
+              />
+              <button
+                type="submit"
+                class="bg-amber-500 text-black px-4 text-lg hover:bg-amber-600 transition-colors duration-300"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Link</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="index.html" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Home
+                </a>
+              </li>
+              <li>
+                <a href="services.html" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Services
+                </a>
+              </li>
+              <li>
+                <a href="projects.html" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Projects
+                </a>
+              </li>
+              <li>
+                <a href="blog.html" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Blog
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> About
+                </a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Team
+                </a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-amber-500 transition-colors duration-300 flex items-center">
+                  <i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i> Reviews
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact</h3>
+            <ul class="space-y-3 text-gray-400">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt text-amber-500 mr-3 mt-1"></i>
+                55 Main Street, 2nd block<br />Melbourne, Australia
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope text-amber-500 mr-3"></i>
+                support@gmail.com
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone text-amber-500 mr-3"></i> +000 (123) 44 55
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-700 py-6 text-center text-gray-400 text-sm">
+        <p>© 2023 Mad About Marketing. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-8 right-8 bg-amber-500 text-white p-3 rounded-full shadow-lg hover:bg-amber-600 transition-all duration-300 transform translate-y-16 opacity-0"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="mobile-nav.js"></script>
+
+    <script>
+      // Back to top button
+      const backToTopButton = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove("translate-y-16", "opacity-0");
+          backToTopButton.classList.add("translate-y-0", "opacity-100");
+        } else {
+          backToTopButton.classList.remove("translate-y-0", "opacity-100");
+          backToTopButton.classList.add("translate-y-16", "opacity-0");
+        }
+      });
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Header scroll effect
+      const header = document.querySelector("header");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 100) {
+          header.classList.add("shadow-xl", "py-3");
+          header.classList.remove("py-4");
+        } else {
+          header.classList.remove("shadow-xl", "py-3");
+          header.classList.add("py-4");
+        }
+      });
+
+      // Dynamic content based on URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectId = urlParams.get('id');
+
+      const projects = {
+        '1': {
+          title: 'Modern E-Commerce Platform',
+          category: 'E-Commerce',
+          type: 'Web Design',
+          description: 'A fully responsive online store with advanced product filtering, secure payment integration, and real-time inventory management built with modern technologies.',
+          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
+          year: '2024',
+          duration: '6 months'
+        },
+        '2': {
+          title: 'Corporate Website Redesign',
+          category: 'Corporate',
+          type: 'UI/UX',
+          description: 'Complete website overhaul for a Fortune 500 company, improving user experience and boosting conversion rates by 45% through strategic design improvements.',
+          image: 'https://images.unsplash.com/photo-1551434678-e076c223a692',
+          year: '2024',
+          duration: '4 months'
+        },
+        '3': {
+          title: 'Fitness Tracking App',
+          category: 'Mobile App',
+          type: 'Development',
+          description: 'Cross-platform mobile application with real-time tracking, social features, and AI-powered personalized workout plans for fitness enthusiasts.',
+          image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0',
+          year: '2024',
+          duration: '8 months'
+        },
+        '4': {
+          title: 'Tech Startup Branding',
+          category: 'Branding',
+          type: 'Design',
+          description: 'Complete brand identity including logo design, brand guidelines, marketing materials, and comprehensive digital assets for a growing tech startup.',
+          image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f',
+          year: '2023',
+          duration: '3 months'
+        },
+        '5': {
+          title: 'National SEO Campaign',
+          category: 'SEO',
+          type: 'Marketing',
+          description: 'Comprehensive SEO strategy that increased organic traffic by 250% and achieved top 3 rankings for 50+ target keywords across multiple industries.',
+          image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf',
+          year: '2023',
+          duration: '12 months'
+        },
+        '6': {
+          title: 'Social Media Management',
+          category: 'Social Media',
+          type: 'Strategy',
+          description: 'Complete social media management growing following from 5K to 100K+ in 8 months with exceptional engagement rates and brand awareness.',
+          image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984',
+          year: '2023',
+          duration: '8 months'
+        }
+      };
+
+      if (projectId && projects[projectId]) {
+        const project = projects[projectId];
+        document.getElementById('projectTitle').textContent = project.title;
+        document.getElementById('categoryBadge').textContent = project.category;
+        document.getElementById('typeBadge').textContent = project.type;
+        document.getElementById('projectDescription').textContent = project.description;
+        document.getElementById('projectImage').src = project.image;
+        document.getElementById('projectYear').textContent = project.year;
+        document.getElementById('projectDuration').textContent = project.duration;
+        document.getElementById('breadcrumbTitle').textContent = project.title;
+        document.title = `${project.title} | MadAboutMarketing`;
+      }
+    </script>
+  </body>
+</html>

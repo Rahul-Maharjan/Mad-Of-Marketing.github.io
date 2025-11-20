@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Projects | MadAboutMarketing</title>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              "fade-in": "fadeIn 0.8s ease-in-out",
+              "slide-up": "slideUp 0.8s ease-out",
+              "scale-up": "scaleUp 0.6s ease-out",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              slideUp: {
+                "0%": { transform: "translateY(20px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
+              scaleUp: {
+                "0%": { transform: "scale(0.95)", opacity: "0" },
+                "100%": { transform: "scale(1)", opacity: "1" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #ffffff;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #f59e0b;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d97706;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .btn-gradient {
+        background: linear-gradient(90deg, #f59e0b, #fbbf24);
+      }
+      .btn-gradient:hover {
+        background: linear-gradient(90deg, #d97706, #f59e0b);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-800 text-white font-sans overflow-x-hidden">
+    <!-- HEADER -->
+    <header
+      class="w-full bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800 px-6 py-4 fixed top-0 z-50 shadow-lg transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <div class="rounded">
+            <img
+              src="./images/logo.jpg"
+              alt="MadAboutMarketing Logo"
+              class="rounded w-6 h-6"
+            />
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight">Mad About Marketing</h1>
+        </div>
+
+        <!-- Nav -->
+        <nav class="hidden md:flex space-x-8 text-sm font-semibold">
+          <a
+            href="index.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            HOME
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="services.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            SERVICES
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="projects.html"
+            class="text-amber-400 transition-all duration-300 relative group"
+          >
+            PROJECTS
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-amber-400"></span>
+          </a>
+          <a
+            href="blog.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            BLOG
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="contact.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            CONTACT
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </nav>
+
+        <!-- Call -->
+        <div
+          class="hidden md:flex items-center space-x-3 bg-[#2B2B2B]/50 rounded-full px-4 py-2 hover:bg-[#2B2B2B]/70 transition-all duration-300"
+        >
+          <div class="bg-amber-500 p-3 rounded-full w-10 h-10 flex items-center justify-center">
+            <i class="fas fa-phone text-black"></i>
+          </div>
+          <div>
+            <p class="text-xs">Call Anytime</p>
+            <p class="font-bold">+88 01750050088</p>
+          </div>
+        </div>
+
+        <!-- Mobile -->
+        <button
+          id="mobileMenuButton"
+          aria-controls="mobileNav"
+          aria-expanded="false"
+          class="md:hidden flex flex-col space-y-1"
+        >
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+        </button>
+        
+        <!-- Mobile nav panel -->
+        <div
+          id="mobileNav"
+          class="fixed inset-0 z-40 md:hidden pointer-events-none"
+          aria-hidden="true"
+        >
+          <div
+            class="absolute right-0 w-3/4 max-w-xs h-full bg-gray-900 p-6 transform translate-x-full transition-transform duration-300"
+            id="mobileNavPanel"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center space-x-2">
+                <div class="bg-amber-500 p-1 rounded">
+                  <img
+                    src="images/logo.jpg"
+                    alt="MadAboutMarketing Logo"
+                    class="w-6 h-6"
+                  />
+                </div>
+                <h2 class="font-bold">Mad About Marketing</h2>
+              </div>
+              <button
+                id="mobileClose"
+                aria-label="Close menu"
+                class="text-gray-300"
+              >
+                ✕
+              </button>
+            </div>
+            <nav class="flex flex-col gap-4">
+              <a href="index.html" class="text-white font-semibold">Home</a>
+              <a href="services.html" class="text-white font-semibold">Services</a>
+              <a href="projects.html" class="text-amber-400 font-semibold">Projects</a>
+              <a href="blog.html" class="text-white font-semibold">Blog</a>
+              <a href="contact.html" class="text-white font-semibold">Contact</a>
+            </nav>
+          </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800 pt-32 pb-20"
+    >
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="animate-slide-up">
+          <p class="text-amber-400 font-semibold uppercase tracking-widest mb-4">
+            <i class="fas fa-briefcase mr-2"></i>Our Portfolio
+          </p>
+          <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+            Transforming Ideas Into
+            <span class="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent"> Reality</span>
+          </h1>
+          <p class="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed mb-8">
+            Discover our portfolio of award-winning projects that showcase innovation, 
+            creativity, and measurable results across diverse industries.
+          </p>
+          <div class="flex items-center justify-center gap-4 text-sm">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
+              <span class="text-gray-400">250+ Successful Projects</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span class="text-gray-400">98% Client Retention</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER TABS -->
+    <section class="py-12 bg-gray-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-wrap items-center justify-center gap-4 mb-12">
+          <button
+            class="filter-btn active px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-amber-500 text-black hover:bg-amber-600"
+            data-filter="all"
+          >
+            All Projects
+          </button>
+          <button
+            class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-gray-900 text-gray-300 hover:bg-amber-500 hover:text-black"
+            data-filter="web"
+          >
+            <i class="fas fa-globe mr-2"></i>Web Design
+          </button>
+          <button
+            class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-gray-900 text-gray-300 hover:bg-amber-500 hover:text-black"
+            data-filter="mobile"
+          >
+            <i class="fas fa-mobile-alt mr-2"></i>Mobile Apps
+          </button>
+          <button
+            class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-gray-900 text-gray-300 hover:bg-amber-500 hover:text-black"
+            data-filter="branding"
+          >
+            <i class="fas fa-palette mr-2"></i>Branding
+          </button>
+          <button
+            class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-gray-900 text-gray-300 hover:bg-amber-500 hover:text-black"
+            data-filter="marketing"
+          >
+            <i class="fas fa-chart-line mr-2"></i>Marketing
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS GRID -->
+    <section class="pb-20 bg-gray-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <div id="projectsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Product Card 1 -->
+          <div class="project-card bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 group" data-category="web">
+            <div class="relative overflow-hidden h-72">
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+                alt="E-Commerce Platform"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+              <div class="absolute top-4 right-4 bg-amber-500 text-black px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                <i class="fas fa-star mr-1"></i>Featured
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="bg-amber-500 text-black px-4 py-1 rounded-full text-xs font-bold">
+                    E-Commerce
+                  </span>
+                  <span class="bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-xs font-semibold">
+                    Web Design
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-3 group-hover:text-amber-400 transition-colors">
+                Modern E-Commerce Platform
+              </h3>
+              <p class="text-gray-400 mb-5 line-clamp-2">
+                A fully responsive online store with advanced product filtering, secure payment integration, and real-time inventory management.
+              </p>
+              <div class="flex items-center justify-between pt-4 border-t border-gray-800">
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center gap-2 text-gray-400 text-sm">
+                    <i class="fas fa-calendar"></i>
+                    <span>2024</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-gray-400 text-sm">
+                    <i class="fas fa-clock"></i>
+                    <span>6 months</span>
+                  </div>
+                </div>
+                <a
+                  href="project-detail.html?id=1"
+                  class="text-amber-500 font-semibold hover:text-amber-400 transition-colors inline-flex items-center group/link"
+                >
+                  View Details
+                  <i class="fas fa-arrow-right ml-2 group-hover/link:translate-x-2 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="project-card bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 group" data-category="web">
+            <div class="relative overflow-hidden h-72">
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692"
+                alt="Corporate Website"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="bg-amber-500 text-black px-4 py-1 rounded-full text-xs font-bold">
+                    Corporate
+                  </span>
+                  <span class="bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-xs font-semibold">
+                    UI/UX
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-3 group-hover:text-amber-400 transition-colors">
+                Corporate Website Redesign
+              </h3>
+              <p class="text-gray-400 mb-5 line-clamp-2">
+                Complete website overhaul for a Fortune 500 company, improving user experience and boosting conversion rates by 45%.
+              </p>
+              <div class="flex items-center justify-between pt-4 border-t border-gray-800">
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center gap-2 text-gray-400 text-sm">
+                    <i class="fas fa-calendar"></i>
+                    <span>2024</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-gray-400 text-sm">
+                    <i class="fas fa-clock"></i>
+                    <span>4 months</span>
+                  </div>
+                </div>
+                <a
+                  href="project-detail.html?id=2"
+                  class="text-amber-500 font-semibold hover:text-amber-400 transition-colors inline-flex items-center group/link"
+                >
+                  View Details
+                  <i class="fas fa-arrow-right ml-2 group-hover/link:translate-x-2 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="project-card bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 group" data-category="mobile">
+            <div class="relative overflow-hidden h-72">
+              <img
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0"
+                alt="Mobile App"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+              <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                <i class="fas fa-fire mr-1"></i>New
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="bg-amber-500 text-black px-4 py-1 rounded-full text-xs font-bold">
+                    Mobile App
+                  </span>
+                  <span class="bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-xs font-semibold">
+                    Development
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-3 group-hover:text-amber-400 transition-colors">
+                Fitness Tracking App
+              </h3>
+              <p class="text-gray-400 mb-5 line-clamp-2">
+                Cross-platform mobile application with real-time tracking, social features, and AI-powered personalized workout plans.
+              </p>
+              <div class="flex items-center justify-between pt-4 border-t border-gray-800">
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center gap-2 text-gray-400 text-sm">
+                    <i class="fas fa-calendar"></i>
+                    <span>2024</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-gray-400 text-sm">
+                    <i class="fas fa-clock"></i>
+                    <span>8 months</span>
+                  </div>
+                </div>
+                <a
+                  href="project-detail.html?id=3"
+                  class="text-amber-500 font-semibold hover:text-amber-400 transition-colors inline-flex items-center group/link"
+                >
+                  View Details
+                  <i class="fas fa-arrow-right ml-2 group-hover/link:translate-x-2 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 4 -->
+          <div class="project-card bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 group" data-category="branding">
+            <div class="relative overflow-hidden h-72">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+                alt="Branding Project"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="bg-amber-500 text-black px-4 py-1 rounded-full text-xs font-bold">
+                    Branding
+                  </span>
+                  <span class="bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-xs font-semibold">
+                    Design
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-3 group-hover:text-amber-400 transition-colors">
+                Tech Startup Branding
+              </h3>
+              <p class="text-gray-400 mb-5 line-clamp-2">
+                Complete brand identity including logo design, brand guidelines, marketing materials, and comprehensive digital assets.
+              </p>
+              <div class="flex items-center justify-between pt-4 border-t border-gray-800">
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center gap-2 text-gray-400 text-sm">
+                    <i class="fas fa-calendar"></i>
+                    <span>2023</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-gray-400 text-sm">
+                    <i class="fas fa-clock"></i>
+                    <span>3 months</span>
+                  </div>
+                </div>
+                <a
+                  href="project-detail.html?id=4"
+                  class="text-amber-500 font-semibold hover:text-amber-400 transition-colors inline-flex items-center group/link"
+                >
+                  View Details
+                  <i class="fas fa-arrow-right ml-2 group-hover/link:translate-x-2 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 5 -->
+          <div class="project-card bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 group" data-category="marketing">
+            <div class="relative overflow-hidden h-72">
+              <img
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf"
+                alt="SEO Campaign"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="bg-amber-500 text-black px-4 py-1 rounded-full text-xs font-bold">
+                    SEO
+                  </span>
+                  <span class="bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-xs font-semibold">
+                    Marketing
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-3 group-hover:text-amber-400 transition-colors">
+                National SEO Campaign
+              </h3>
+              <p class="text-gray-400 mb-5 line-clamp-2">
+                Comprehensive SEO strategy that increased organic traffic by 250% and achieved top 3 rankings for 50+ target keywords.
+              </p>
+              <div class="flex items-center justify-between pt-4 border-t border-gray-800">
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center gap-2 text-gray-400 text-sm">
+                    <i class="fas fa-calendar"></i>
+                    <span>2023</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-gray-400 text-sm">
+                    <i class="fas fa-clock"></i>
+                    <span>12 months</span>
+                  </div>
+                </div>
+                <a
+                  href="project-detail.html?id=5"
+                  class="text-amber-500 font-semibold hover:text-amber-400 transition-colors inline-flex items-center group/link"
+                >
+                  View Details
+                  <i class="fas fa-arrow-right ml-2 group-hover/link:translate-x-2 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 6 -->
+          <div class="project-card bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 group" data-category="marketing">
+            <div class="relative overflow-hidden h-72">
+              <img
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984"
+                alt="Social Media"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="bg-amber-500 text-black px-4 py-1 rounded-full text-xs font-bold">
+                    Social Media
+                  </span>
+                  <span class="bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-xs font-semibold">
+                    Strategy
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-3 group-hover:text-amber-400 transition-colors">
+                Social Media Management
+              </h3>
+              <p class="text-gray-400 mb-5 line-clamp-2">
+                Complete social media management growing following from 5K to 100K+ in 8 months with exceptional engagement rates.
+              </p>
+              <div class="flex items-center justify-between pt-4 border-t border-gray-800">
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center gap-2 text-gray-400 text-sm">
+                    <i class="fas fa-calendar"></i>
+                    <span>2023</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-gray-400 text-sm">
+                    <i class="fas fa-clock"></i>
+                    <span>8 months</span>
+                  </div>
+                </div>
+                <a
+                  href="project-detail.html?id=6"
+                  class="text-amber-500 font-semibold hover:text-amber-400 transition-colors inline-flex items-center group/link"
+                >
+                  View Details
+                  <i class="fas fa-arrow-right ml-2 group-hover/link:translate-x-2 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="py-20 bg-gray-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8 text-center">
+          <div class="animate-fade-in">
+            <div class="text-5xl font-extrabold text-amber-500 mb-2">250+</div>
+            <p class="text-gray-400">Projects Completed</p>
+          </div>
+          <div class="animate-fade-in" style="animation-delay: 0.1s">
+            <div class="text-5xl font-extrabold text-amber-500 mb-2">98%</div>
+            <p class="text-gray-400">Client Satisfaction</p>
+          </div>
+          <div class="animate-fade-in" style="animation-delay: 0.2s">
+            <div class="text-5xl font-extrabold text-amber-500 mb-2">15+</div>
+            <p class="text-gray-400">Years Experience</p>
+          </div>
+          <div class="animate-fade-in" style="animation-delay: 0.3s">
+            <div class="text-5xl font-extrabold text-amber-500 mb-2">50+</div>
+            <p class="text-gray-400">Team Members</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800">
+      <div class="max-w-5xl mx-auto px-6 text-center animate-scale-up">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-6">
+          Ready to Start Your Project?
+        </h2>
+        <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+          Let's discuss your ideas and create something amazing together. Contact us today for a free consultation.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="contact.html"
+            class="btn-gradient text-black font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/30 transform hover:-translate-y-1 inline-flex items-center"
+          >
+            GET IN TOUCH
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+          <a
+            href="services.html"
+            class="border-2 border-amber-500 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-amber-500 hover:text-black transform hover:-translate-y-1"
+          >
+            VIEW SERVICES
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+      <!-- Footer Main -->
+      <div class="border-t border-gray-700 pt-10 pb-16">
+        <div
+          class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+        >
+          <!-- MadAboutMarketing Logo Section -->
+          <div>
+            <div class="flex items-center mb-4 space-x-2">
+              <div class="bg-amber-500 p-2 rounded">
+                <i class="fas fa-chart-line text-black"></i>
+              </div>
+              <h2 class="text-2xl font-semibold">Mad About Marketing</h2>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Delivering innovative digital marketing solutions that drive growth and success.
+            </p>
+            <form class="flex bg-white rounded-lg overflow-hidden shadow-lg">
+              <input
+                type="email"
+                placeholder="Email address"
+                class="flex-1 px-4 py-2 text-black outline-none"
+              />
+              <button
+                type="submit"
+                class="bg-amber-500 text-black px-4 text-lg hover:bg-amber-600 transition-colors duration-300"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Link</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="projects.html"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blog.html"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  Team Member</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  Reviews</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  Latest News</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact</h3>
+            <ul class="space-y-3 text-gray-400">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt text-amber-500 mr-3 mt-1"></i>
+                55 Main Street, 2nd block<br />Melbourne, Australia
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope text-amber-500 mr-3"></i>
+                support@gmail.com
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone text-amber-500 mr-3"></i> +000 (123) 44 55
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div
+        class="border-t border-gray-700 py-6 text-center text-gray-400 text-sm"
+      >
+        <p>© 2023 Mad About Marketing. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-8 right-8 bg-amber-500 text-white p-3 rounded-full shadow-lg hover:bg-amber-600 transition-all duration-300 transform translate-y-16 opacity-0"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="mobile-nav.js"></script>
+
+    <script>
+      // Back to top button
+      const backToTopButton = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove("translate-y-16", "opacity-0");
+          backToTopButton.classList.add("translate-y-0", "opacity-100");
+        } else {
+          backToTopButton.classList.remove("translate-y-0", "opacity-100");
+          backToTopButton.classList.add("translate-y-16", "opacity-0");
+        }
+      });
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Header scroll effect
+      const header = document.querySelector("header");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 100) {
+          header.classList.add("shadow-xl", "py-3");
+          header.classList.remove("py-4");
+        } else {
+          header.classList.remove("shadow-xl", "py-3");
+          header.classList.add("py-4");
+        }
+      });
+
+      // Filter functionality
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const filter = button.getAttribute('data-filter');
+          
+          // Update active button
+          filterButtons.forEach(btn => {
+            btn.classList.remove('active', 'bg-amber-500', 'text-black');
+            btn.classList.add('bg-gray-900', 'text-gray-300');
+          });
+          button.classList.add('active', 'bg-amber-500', 'text-black');
+          button.classList.remove('bg-gray-900', 'text-gray-300');
+
+          // Filter projects with animation
+          projectCards.forEach((card, index) => {
+            const category = card.getAttribute('data-category');
+            
+            if (filter === 'all' || category === filter) {
+              card.style.display = 'block';
+              setTimeout(() => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                  card.style.transition = 'all 0.5s ease';
+                  card.style.opacity = '1';
+                  card.style.transform = 'translateY(0)';
+                }, 50 * index);
+              }, 10);
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

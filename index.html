@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MadAboutMarketing | Digital Marketing Agency</title>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preload" as="image" href="images/digital-marketing.png" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              "logo-scroll": "logo-scroll 30s linear infinite",
+              "fade-in": "fadeIn 0.8s ease-in-out",
+              "slide-up": "slideUp 0.8s ease-out",
+              "pulse-slow": "pulse 3s infinite",
+              "bounce-slow": "bounce 2s infinite",
+            },
+            keyframes: {
+              "logo-scroll": {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              slideUp: {
+                "0%": { transform: "translateY(20px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #ffffff;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #f59e0b;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d97706;
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Custom gradient for buttons */
+      .btn-gradient {
+        background: linear-gradient(90deg, #f59e0b, #fbbf24);
+      }
+      .btn-gradient:hover {
+        background: linear-gradient(90deg, #d97706, #f59e0b);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-900 text-white font-sans overflow-x-hidden">
+    <!-- HEADER -->
+    <header
+      class="w-full text-white bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800 px-6 py-4 fixed top-0 z-50 shadow-lg transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <div class="rounded">
+            <img
+              src="./images/logo.jpg"
+              alt="MadAboutMarketing Logo"
+              class="rounded w-6 h-6"
+            />
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight">Mad About Marketing</h1>
+        </div>
+
+        <!-- Nav -->
+        <nav class="hidden md:flex space-x-8 text-sm font-semibold">
+          <a
+            href="index.html"
+            class="text-amber-400 transition-all duration-300 relative group"
+          >
+            HOME
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-amber-400"></span>
+          </a>
+          <a
+          href="services.html"
+          class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+          SERVICES
+          <span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+          ></span>
+          </a>
+          <a
+            href="projects.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            PROJECTS
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="blog.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            BLOG
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="contact.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            CONTACT
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </nav>
+
+        <!-- Call -->
+        <div
+          class="hidden md:flex items-center space-x-3 bg-[#2B2B2B]/50 rounded-full px-4 py-2 hover:bg-[#2B2B2B]/70 transition-all duration-300"
+        >
+          <div class="bg-amber-500 p-3 rounded-full w-10 h-10 flex items-center justify-center">
+            <i class="fas fa-phone text-black"></i>
+          </div>
+          <div>
+            <p class="text-xs">Call Anytime</p>
+            <p class="font-bold">+88 01750050088</p>
+          </div>
+        </div>
+
+        <!-- Mobile -->
+        <button
+          id="mobileMenuButton"
+          aria-controls="mobileNav"
+          aria-expanded="false"
+          class="md:hidden flex flex-col space-y-1"
+        >
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+        </button>
+        
+        <!-- Mobile nav panel -->
+        <div
+          id="mobileNav"
+          class="fixed inset-0 z-40 md:hidden pointer-events-none"
+          aria-hidden="true"
+        >
+          <div
+            id="mobileNavPanel"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center space-x-2">
+                <div class="bg-amber-500 p-1 rounded">
+                  <img
+                    src="images/logo.jpg"
+                    alt="MadAboutMarketing Logo"
+                    class="w-6 h-6"
+                  />
+                </div>
+                <h2 class="font-bold">Mad About Marketing</h2>
+              </div>
+              <button
+                id="mobileClose"
+                aria-label="Close menu"
+                class="text-gray-300"
+              >
+                ✕
+              </button>
+            </div>
+            <nav class="flex flex-col gap-4">
+              <a href="index.html" class="text-white font-semibold">Home</a>
+              <a href="services.html" class="text-amber-400 font-semibold">Services</a>
+              <a href="projects.html" class="text-white font-semibold">Projects</a>
+              <a href="blog.html" class="text-white font-semibold">Blog</a>
+              <a href="contact.html" class="text-white font-semibold">Contact</a>
+            </nav>
+          </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800 pt-32 pb-28"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"
+      >
+        <!-- Left Content -->
+        <div class="animate-slide-up">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="w-12 h-1 bg-amber-500 rounded"></div>
+            <p
+              class="text-amber-400 font-bold uppercase tracking-wider text-sm"
+            >
+              Digital Marketing Excellence
+            </p>
+          </div>
+          <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+            Transform Your
+            <span class="bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent"> Digital Presence</span>
+          </h1>
+          <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+            Elevate your brand with data-driven marketing strategies, stunning web design, 
+            and cutting-edge digital solutions that deliver measurable results.
+          </p>
+
+          <!-- Stats Row -->
+          <div class="grid grid-cols-3 gap-6 mb-8">
+            <div>
+              <div class="text-3xl font-extrabold text-amber-500 mb-1">250+</div>
+              <p class="text-gray-400 text-sm">Projects Done</p>
+            </div>
+            <div>
+              <div class="text-3xl font-extrabold text-amber-500 mb-1">98%</div>
+              <p class="text-gray-400 text-sm">Client Satisfaction</p>
+            </div>
+            <div>
+              <div class="text-3xl font-extrabold text-amber-500 mb-1">15+</div>
+              <p class="text-gray-400 text-sm">Years Experience</p>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div
+            class="flex flex-col sm:flex-row items-start sm:items-center gap-4"
+          >
+            <a
+              href="services.html"
+              class="bg-amber-500 text-black font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-amber-600 hover:shadow-lg hover:shadow-amber-500/30 transform hover:scale-105 inline-flex items-center group"
+            >
+              Explore Services
+              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+            </a>
+            <a
+              href="projects.html"
+              class="border-2 border-amber-500 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-amber-500 hover:text-black transform hover:scale-105 inline-flex items-center"
+            >
+              View Portfolio
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Image -->
+        <div class="relative flex justify-center animate-fade-in">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-amber-500/20 rounded-full blur-3xl"></div>
+            <img
+              src="images/digital-marketing.png"
+              alt="Digital Marketing Hero"
+              class="relative w-full max-w-[500px] rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+            <div
+              class="absolute -top-6 -right-6 bg-amber-500 rounded-2xl p-4 shadow-xl animate-bounce-slow"
+            >
+              <i class="fas fa-rocket text-black text-2xl"></i>
+            </div>
+            <div
+              class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl"
+            >
+              <div class="flex items-center gap-3">
+                <div class="bg-amber-500 rounded-full p-3">
+                  <i class="fas fa-star text-black"></i>
+                </div>
+                <div>
+                  <div class="text-black font-bold text-lg">5.0</div>
+                  <div class="text-gray-600 text-xs">Client Rating</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENT LOGOS SECTION -->
+    <section class="py-20 bg-gray-900">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="mb-12 animate-slide-up">
+          <p class="text-amber-500 font-bold uppercase tracking-wider mb-3">
+            Trusted Partners
+          </p>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white">
+            Trusted by Industry Leaders
+          </h2>
+        </div>
+
+        <div class="overflow-hidden w-full relative">
+          <div
+            class="flex items-center gap-16 animate-logo-scroll"
+            style="width: max-content"
+          >
+            <div
+              class="flex justify-center transition-all duration-300 opacity-60 hover:opacity-100 hover:scale-110 grayscale hover:grayscale-0"
+            >
+              <img
+                src="images/shopify.png"
+                alt="Shopify"
+                class="h-12 w-auto object-contain"
+              />
+            </div>
+            <div
+              class="flex justify-center transition-all duration-300 opacity-60 hover:opacity-100 hover:scale-110 grayscale hover:grayscale-0"
+            >
+              <img
+                src="images/relay.png"
+                alt="Relay"
+                class="h-12 w-auto object-contain"
+              />
+            </div>
+            <div
+              class="flex justify-center transition-all duration-300 opacity-60 hover:opacity-100 hover:scale-110 grayscale hover:grayscale-0"
+            >
+              <img
+                src="images/wise.png"
+                alt="Wise"
+                class="h-12 w-auto object-contain"
+              />
+            </div>
+            <div
+              class="flex justify-center transition-all duration-300 opacity-60 hover:opacity-100 hover:scale-110 grayscale hover:grayscale-0"
+            >
+              <img
+                src="images/mercury.png"
+                alt="Mercury"
+                class="h-12 w-auto object-contain"
+              />
+            </div>
+            <div
+              class="flex justify-center transition-all duration-300 opacity-60 hover:opacity-100 hover:scale-110 grayscale hover:grayscale-0"
+            >
+              <img
+                src="images/payonner.png"
+                alt="Payoneer"
+                class="h-12 w-auto object-contain"
+              />
+            </div>
+            <div
+              class="flex justify-center transition-all duration-300 opacity-60 hover:opacity-100 hover:scale-110 grayscale hover:grayscale-0"
+            >
+              <img
+                src="images/paypal.png"
+                alt="PayPal"
+                class="h-12 w-auto object-contain"
+              />
+            </div>
+            <!-- Repeat for seamless scroll -->
+            <div
+              class="flex justify-center transition-all duration-300 opacity-60 hover:opacity-100 hover:scale-110 grayscale hover:grayscale-0"
+            >
+              <img
+                src="images/shopify.png"
+                alt="Shopify"
+                class="h-12 w-auto object-contain"
+              />
+            </div>
+            <div
+              class="flex justify-center transition-all duration-300 opacity-60 hover:opacity-100 hover:scale-110 grayscale hover:grayscale-0"
+            >
+              <img
+                src="images/relay.png"
+                alt="Relay"
+                class="h-12 w-auto object-contain"
+              />
+            </div>
+            <div
+              class="flex justify-center transition-all duration-300 opacity-60 hover:opacity-100 hover:scale-110 grayscale hover:grayscale-0"
+            >
+              <img
+                src="images/wise.png"
+                alt="Wise"
+                class="h-12 w-auto object-contain"
+              />
+            </div>
+            <div
+              class="flex justify-center transition-all duration-300 opacity-60 hover:opacity-100 hover:scale-110 grayscale hover:grayscale-0"
+            >
+              <img
+                src="images/mercury.png"
+                alt="Mercury"
+                class="h-12 w-auto object-contain"
+              />
+            </div>
+            <div
+              class="flex justify-center transition-all duration-300 opacity-60 hover:opacity-100 hover:scale-110 grayscale hover:grayscale-0"
+            >
+              <img
+                src="images/payonner.png"
+                alt="Payoneer"
+                class="h-12 w-auto object-contain"
+              />
+            </div>
+            <div
+              class="flex justify-center transition-all duration-300 opacity-60 hover:opacity-100 hover:scale-110 grayscale hover:grayscale-0"
+            >
+              <img
+                src="images/paypal.png"
+                alt="PayPal"
+                class="h-12 w-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-gray-800">
+      <div class="text-center mb-16 animate-slide-up">
+        <p class="text-amber-500 font-bold uppercase tracking-wider mb-3">
+          Our Services
+        </p>
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
+          Comprehensive Digital Solutions
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          We offer end-to-end digital marketing services to help your business thrive online
+        </p>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-6"
+      >
+        <!-- Card 1 -->
+        <div
+          class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 p-4 transform hover:-translate-y-2 group"
+        >
+          <div class="relative mb-5 overflow-hidden rounded-lg">
+            <img
+              src="images/service1.jpg"
+              alt="Website Design"
+              class="rounded-lg w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div
+              class="absolute bottom-3 left-3 bg-amber-500 text-white p-2 rounded-full"
+            >
+              <i class="fas fa-clock"></i>
+            </div>
+          </div>
+          <h3
+            class="text-lg font-semibold mb-4 text-black group-hover:text-amber-600 transition-colors duration-300"
+          >
+            Website Design (UI/UX)
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Website
+              Maintenance & Updates
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Security
+              Monitoring
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Performance
+              Optimization
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Backup & Recovery
+            </li>
+          </ul>
+          <div class="mt-5 flex items-center justify-start gap-2">
+            <a
+              href="services.html"
+              class="text-sm font-semibold text-gray-700 hover:text-amber-500 transition-colors duration-300"
+              >More Details</a
+            >
+            <button
+              class="text-amber-500"
+            >
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 p-4 transform hover:-translate-y-2 group"
+        >
+          <div class="relative mb-5 overflow-hidden rounded-lg">
+            <img
+              src="images/service2.jpg"
+              alt="Corporate Websites"
+              class="rounded-lg w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div
+              class="absolute bottom-3 left-3 bg-amber-500 text-white p-2 rounded-full"
+            >
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </div>
+          <h3
+            class="text-lg font-semibold mb-4 text-black group-hover:text-amber-600 transition-colors duration-300"
+          >
+            Corporate/Portfolio Websites
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Website
+              Maintenance & Updates
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Performance
+              Optimization
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Security
+              Monitoring
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Backup & Recovery
+            </li>
+          </ul>
+          <div class="mt-5 flex items-center justify-start gap-2">
+            <a
+              href="services.html"
+              class="text-sm font-semibold text-gray-700 hover:text-amber-500 transition-colors duration-300"
+              >More Details</a
+            >
+            <button
+              class="text-amber-500"
+            >
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 p-4 transform hover:-translate-y-2 group"
+        >
+          <div class="relative mb-5 overflow-hidden rounded-lg">
+            <img
+              src="images/service3.jpg"
+              alt="Maintenance & Support"
+              class="rounded-lg w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div
+              class="absolute bottom-3 left-3 bg-amber-500 text-white p-2 rounded-full"
+            >
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <h3
+            class="text-lg font-semibold mb-4 text-black group-hover:text-amber-600 transition-colors duration-300"
+          >
+            Maintenance & Support
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Website
+              Maintenance & Updates
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Performance
+              Optimization
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Security
+              Monitoring
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Backup & Recovery
+            </li>
+          </ul>
+          <div class="mt-5 flex items-center justify-start gap-2">
+            <a
+              href="services.html"
+              class="text-sm font-semibold text-gray-700 hover:text-amber-500 transition-colors duration-300"
+              >More Details</a
+            >
+            <button
+              class="text-amber-500"
+            >
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 p-4 transform hover:-translate-y-2 group"
+        >
+          <div class="relative mb-5 overflow-hidden rounded-lg">
+            <img
+              src="images/service4.jpg"
+              alt="Creative Design"
+              class="rounded-lg w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div
+              class="absolute bottom-3 left-3 bg-amber-500 text-white p-2 rounded-full"
+            >
+              <i class="fas fa-bolt"></i>
+            </div>
+          </div>
+          <h3
+            class="text-lg font-semibold mb-4 text-black group-hover:text-amber-600 transition-colors duration-300"
+          >
+            Branding & Creative Design
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Website
+              Maintenance & Updates
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Performance
+              Optimization
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Security
+              Monitoring
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-amber-500 mr-2"></i> Backup & Recovery
+            </li>
+          </ul>
+          <div class="mt-5 flex items-center justify-start gap-2">
+            <a
+              href="services.html"
+              class="text-sm font-semibold text-gray-700 hover:text-amber-500 transition-colors duration-300"
+              >More Details</a
+            >
+            <button
+              class="text-amber-500"
+            >
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a
+          href="services.html"
+          class="inline-flex items-center gap-2 bg-amber-500 text-black font-bold px-8 py-4 rounded-full hover:bg-amber-600 transition-all duration-300 transform hover:scale-105"
+        >
+          View All Services
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Work Process Section -->
+    <section
+      class="py-20 px-6 text-center relative overflow-hidden bg-gray-900"
+    >
+      <!-- Header -->
+      <div class="mb-16 animate-slide-up">
+        <p class="text-amber-500 font-bold uppercase tracking-wider mb-3">
+          How We Work
+        </p>
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
+          Simple 3-Step Process
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          From concept to launch, we make digital transformation seamless and effective
+        </p>
+      </div>
+
+      <!-- 3 Step Cards -->
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 relative"
+      >
+        <!-- Step 1 -->
+        <div
+          class="flex flex-col items-center text-center relative animate-slide-up"
+          style="animation-delay: 0.2s"
+        >
+          <div class="relative mb-6">
+            <div
+              class="bg-amber-500 w-20 h-20 rounded-full flex items-center justify-center group hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-list text-gray-900 text-2xl"></i>
+            </div>
+            <div
+              class="absolute -top-3 -left-3 bg-gray-700 text-white w-8 h-8 flex items-center justify-center rounded-full border border-gray-600 text-sm font-bold"
+            >
+              01
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Choose Service</h3>
+          <p class="text-gray-300 text-sm max-w-xs">
+            Select from our range of digital marketing services tailored to your
+            business needs and goals.
+          </p>
+        </div>
+
+        <!-- Arrow -->
+        <div
+          class="hidden md:block absolute top-14 left-[27%] w-[120px] animate-pulse"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 200 80"
+          >
+            <path
+              d="M0 40 C50 10, 150 10, 200 40"
+              stroke="#f59e0b"
+              stroke-width="3"
+              fill="none"
+              stroke-linecap="round"
+            />
+            <polygon points="190,40 200,35 200,45" fill="#f59e0b" />
+          </svg>
+        </div>
+
+        <!-- Step 2 -->
+        <div
+          class="flex flex-col items-center text-center relative animate-slide-up"
+          style="animation-delay: 0.4s"
+        >
+          <div class="relative mb-6">
+            <div
+              class="bg-amber-500 w-20 h-20 rounded-full flex items-center justify-center group hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-chart-line text-gray-900 text-2xl"></i>
+            </div>
+            <div
+              class="absolute -top-3 -left-3 bg-gray-700 text-white w-8 h-8 flex items-center justify-center rounded-full border border-gray-600 text-sm font-bold"
+            >
+              02
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Start Optimizing</h3>
+          <p class="text-gray-300 text-sm max-w-xs">
+            Our experts implement strategies to optimize your online presence
+            and drive measurable results.
+          </p>
+        </div>
+
+        <!-- Arrow -->
+        <div
+          class="hidden md:block absolute top-14 left-[60%] w-[120px] animate-pulse"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 200 80"
+          >
+            <path
+              d="M0 40 C50 10, 150 10, 200 40"
+              stroke="#f59e0b"
+              stroke-width="3"
+              fill="none"
+              stroke-linecap="round"
+            />
+            <polygon points="190,40 200,35 200,45" fill="#f59e0b" />
+          </svg>
+        </div>
+
+        <!-- Step 3 -->
+        <div
+          class="flex flex-col items-center text-center relative animate-slide-up"
+          style="animation-delay: 0.6s"
+        >
+          <div class="relative mb-6">
+            <div
+              class="bg-amber-500 w-20 h-20 rounded-full flex items-center justify-center group hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-rocket text-gray-900 text-2xl"></i>
+            </div>
+            <div
+              class="absolute -top-3 -left-3 bg-gray-700 text-white w-8 h-8 flex items-center justify-center rounded-full border border-gray-600 text-sm font-bold"
+            >
+              03
+            </div>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Launch Now</h3>
+          <p class="text-gray-300 text-sm max-w-xs">
+            Watch your business grow as we launch campaigns and track
+            performance for continuous improvement.
+          </p>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div
+        class="mt-16 flex flex-col md:flex-row items-center justify-center gap-4 animate-slide-up"
+        style="animation-delay: 0.8s"
+      >
+        <a
+          href="contact.html"
+          class="px-8 py-4 bg-amber-500 text-black font-bold rounded-full hover:bg-amber-600 transition-all duration-300 transform hover:scale-105"
+        >
+          Schedule Free Consultation
+        </a>
+        <a
+          href="contact.html"
+          class="px-8 py-4 border-2 border-amber-500 text-white font-bold rounded-full hover:bg-amber-500 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+        >
+          Get In Touch
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US Section - Modern Redesign -->
+    <section class="py-20 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-16 animate-slide-up">
+          <p class="text-amber-500 font-bold uppercase tracking-wider mb-3">
+            Why Choose Us
+          </p>
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
+            Why Partner With Us?
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            We deliver exceptional results through innovation, expertise, and unwavering commitment to your success
+          </p>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid lg:grid-cols-3 gap-8 mb-12">
+          <!-- Feature Card 1 -->
+          <div
+            class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-amber-500 transition-all duration-500 group relative overflow-hidden"
+          >
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-all duration-500"></div>
+            <div class="relative z-10">
+              <div
+                class="w-16 h-16 bg-amber-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-amber-500/30 transition-all duration-300"
+              >
+                <i class="fas fa-users text-amber-500 text-3xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-white">Expert Team</h3>
+              <p class="text-gray-400 mb-6">
+                Our certified digital marketing specialists bring years of experience and proven track records across diverse industries.
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-center text-gray-300">
+                  <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                  <span>15+ Years Average Experience</span>
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                  <span>Industry-Certified Professionals</span>
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                  <span>Continuous Training & Development</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Feature Card 2 -->
+          <div
+            class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-amber-500 transition-all duration-500 group relative overflow-hidden"
+          >
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-all duration-500"></div>
+            <div class="relative z-10">
+              <div
+                class="w-16 h-16 bg-amber-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-amber-500/30 transition-all duration-300"
+              >
+                <i class="fas fa-chart-line text-amber-500 text-3xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-white">Proven Results</h3>
+              <p class="text-gray-400 mb-6">
+                Data-driven strategies that consistently deliver measurable ROI and business growth for our clients.
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-center text-gray-300">
+                  <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                  <span>250+ Successful Projects</span>
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                  <span>98% Client Retention Rate</span>
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                  <span>Average 300% ROI Increase</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Feature Card 3 -->
+          <div
+            class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-amber-500 transition-all duration-500 group relative overflow-hidden"
+          >
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-all duration-500"></div>
+            <div class="relative z-10">
+              <div
+                class="w-16 h-16 bg-amber-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-amber-500/30 transition-all duration-300"
+              >
+                <i class="fas fa-rocket text-amber-500 text-3xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-white">Cutting-Edge Technology</h3>
+              <p class="text-gray-400 mb-6">
+                We leverage the latest tools, platforms, and technologies to keep your business ahead of the competition.
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-center text-gray-300">
+                  <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                  <span>AI-Powered Analytics</span>
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                  <span>Automation & Optimization</span>
+                </li>
+                <li class="flex items-center text-gray-300">
+                  <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                  <span>Real-Time Performance Tracking</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          <div class="bg-gray-800 rounded-xl p-6 text-center border border-gray-700 hover:border-amber-500 transition-all duration-300 group">
+            <div class="text-4xl font-extrabold text-amber-500 mb-2 group-hover:scale-110 transition-transform duration-300">250+</div>
+            <p class="text-gray-400">Projects Completed</p>
+          </div>
+          <div class="bg-gray-800 rounded-xl p-6 text-center border border-gray-700 hover:border-amber-500 transition-all duration-300 group">
+            <div class="text-4xl font-extrabold text-amber-500 mb-2 group-hover:scale-110 transition-transform duration-300">98%</div>
+            <p class="text-gray-400">Client Satisfaction</p>
+          </div>
+          <div class="bg-gray-800 rounded-xl p-6 text-center border border-gray-700 hover:border-amber-500 transition-all duration-300 group">
+            <div class="text-4xl font-extrabold text-amber-500 mb-2 group-hover:scale-110 transition-transform duration-300">15+</div>
+            <p class="text-gray-400">Years Experience</p>
+          </div>
+          <div class="bg-gray-800 rounded-xl p-6 text-center border border-gray-700 hover:border-amber-500 transition-all duration-300 group">
+            <div class="text-4xl font-extrabold text-amber-500 mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
+            <p class="text-gray-400">Support Available</p>
+          </div>
+        </div>
+
+        <!-- Additional Benefits -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:bg-gray-800 transition-all duration-300 group">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-shield-alt text-amber-500 text-xl"></i>
+              </div>
+              <h4 class="font-bold text-white">Transparent Reporting</h4>
+            </div>
+            <p class="text-gray-400 text-sm">
+              Clear, honest communication with detailed monthly reports
+            </p>
+          </div>
+
+          <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:bg-gray-800 transition-all duration-300 group">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-dollar-sign text-amber-500 text-xl"></i>
+              </div>
+              <h4 class="font-bold text-white">Competitive Pricing</h4>
+            </div>
+            <p class="text-gray-400 text-sm">
+              Premium quality services at affordable rates with flexible packages
+            </p>
+          </div>
+
+          <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:bg-gray-800 transition-all duration-300 group">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-headset text-amber-500 text-xl"></i>
+              </div>
+              <h4 class="font-bold text-white">Dedicated Support</h4>
+            </div>
+            <p class="text-gray-400 text-sm">
+              Round-the-clock assistance from our expert support team
+            </p>
+          </div>
+
+          <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:bg-gray-800 transition-all duration-300 group">
+            <div class="flex items-center gap-4 mb-3">
+              <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-sync-alt text-amber-500 text-xl"></i>
+              </div>
+              <h4 class="font-bold text-white">Agile Methodology</h4>
+            </div>
+            <p class="text-gray-400 text-sm">
+              Flexible, iterative approach ensuring quick adaptation to changes
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-12">
+          <a
+            href="contact.html"
+            class="inline-flex items-center gap-3 bg-amber-500 text-black font-bold px-10 py-5 rounded-full hover:bg-amber-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-amber-500/30 group"
+          >
+            Start Your Journey Today
+            <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
+          </a>
+          <p class="text-gray-400 text-sm mt-4">
+            No commitments required • Free consultation available
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL SECTION -->
+    <section class="bg-gray-800 text-white py-20 px-6 md:px-12 lg:px-20">
+      <!-- Heading -->
+      <div class="text-center mb-16 animate-slide-up">
+        <p class="text-amber-500 font-semibold uppercase tracking-wider">
+          Testimonials
+        </p>
+        <h2 class="text-3xl md:text-4xl font-extrabold mt-2">
+          What Our Clients Say
+        </h2>
+        <p class="text-gray-400 max-w-xl mx-auto mt-4">
+          Hear from our happy clients who trusted us to elevate their brand and
+          business.
+        </p>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Testimonial Card 1 -->
+        <div
+          class="bg-gray-700 rounded-2xl p-8 relative border border-gray-600 hover:border-amber-500 transition-all duration-500 transform hover:-translate-y-2 group"
+        >
+          <div
+            class="absolute -top-6 left-8 bg-amber-500 text-gray-900 rounded-full w-12 h-12 flex items-center justify-center font-extrabold text-2xl"
+          >
+            “
+          </div>
+          <p class="text-gray-300 mt-6 mb-6 leading-relaxed">
+            Working with this team was a game changer! They delivered on time,
+            communicated clearly, and went above and beyond expectations.
+          </p>
+          <div class="flex items-center gap-4">
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="client"
+              class="w-12 h-12 rounded-full object-cover border-2 border-amber-500 group-hover:scale-110 transition-transform duration-300"
+            />
+            <div>
+              <h4 class="font-semibold text-white">Sophia Miller</h4>
+              <p class="text-gray-400 text-sm">Marketing Director, VisionX</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Card 2 -->
+        <div
+          class="bg-gray-700 rounded-2xl p-8 relative border border-gray-600 hover:border-amber-500 transition-all duration-500 transform hover:-translate-y-2 group"
+        >
+          <div
+            class="absolute -top-6 left-8 bg-amber-500 text-gray-900 rounded-full w-12 h-12 flex items-center justify-center font-extrabold text-2xl"
+          >
+            “
+          </div>
+          <p class="text-gray-300 mt-6 mb-6 leading-relaxed">
+            Their attention to detail and creative approach helped us stand out
+            in our industry. Highly recommended for anyone looking for real
+            results!
+          </p>
+          <div class="flex items-center gap-4">
+            <img
+              src="https://randomuser.me/api/portraits/men/36.jpg"
+              alt="client"
+              class="w-12 h-12 rounded-full object-cover border-2 border-amber-500 group-hover:scale-110 transition-transform duration-300"
+            />
+            <div>
+              <h4 class="font-semibold text-white">Liam Carter</h4>
+              <p class="text-gray-400 text-sm">CEO, CoreTech</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Card 3 -->
+        <div
+          class="bg-gray-700 rounded-2xl p-8 relative border border-gray-600 hover:border-amber-500 transition-all duration-500 transform hover:-translate-y-2 group"
+        >
+          <div
+            class="absolute -top-6 left-8 bg-amber-500 text-gray-900 rounded-full w-12 h-12 flex items-center justify-center font-extrabold text-2xl"
+          >
+            “
+          </div>
+          <p class="text-gray-300 mt-6 mb-6 leading-relaxed">
+            Amazing experience from start to finish. The team really listened to
+            our needs and created something that exceeded our vision.
+          </p>
+          <div class="flex items-center gap-4">
+            <img
+              src="https://randomuser.me/api/portraits/women/68.jpg"
+              alt="client"
+              class="w-12 h-12 rounded-full object-cover border-2 border-amber-500 group-hover:scale-110 transition-transform duration-300"
+            />
+            <div>
+              <h4 class="font-semibold text-white">Ava Johnson</h4>
+              <p class="text-gray-400 text-sm">
+                Creative Strategist, Nova Studio
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900 text-white py-24"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center relative z-10"
+      >
+        <!-- Left Side -->
+        <div class="animate-slide-up">
+          <p class="text-amber-400 font-bold uppercase tracking-wider mb-3">
+            Get In Touch
+          </p>
+          <h2 class="text-4xl md:text-5xl font-extrabold leading-snug mb-6">
+            Ready to Elevate <br />
+            Your Digital Presence?
+          </h2>
+          <p class="text-gray-300 mb-8">
+            Let's discuss how we can help transform your business with our proven digital marketing strategies.
+          </p>
+
+          <div class="space-y-8">
+            <!-- Contact Item 1 -->
+            <div class="flex items-center space-x-4 group">
+              <div
+                class="bg-amber-400 p-4 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fas fa-envelope text-black"></i>
+              </div>
+              <div>
+                <p class="text-gray-300">company@gmail.com</p>
+                <p class="text-gray-300">+00 (2200) – 2222</p>
+              </div>
+            </div>
+
+            <!-- Contact Item 2 -->
+            <div class="flex items-center space-x-4 group">
+              <div
+                class="bg-amber-400 p-4 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fas fa-map-marker-alt text-black"></i>
+              </div>
+              <div>
+                <p class="text-gray-300">90 Washington, mg</p>
+                <p class="text-gray-300">Manchester, Kentucky USA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side - Form -->
+        <div
+          class="bg-white rounded-2xl shadow-xl p-8 text-gray-800 animate-fade-in"
+        >
+          <p class="text-sm font-semibold text-gray-500">Contact us</p>
+          <h3 class="text-3xl font-extrabold text-gray-900 mb-6">
+            Get in Touch
+          </h3>
+
+          <form class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                class="w-full p-3 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all duration-300"
+              />
+              <input
+                type="email"
+                placeholder="Email Address"
+                class="w-full p-3 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all duration-300"
+              />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <input
+                type="text"
+                placeholder="Enter Subject"
+                class="w-full p-3 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all duration-300"
+              />
+              <input
+                type="tel"
+                placeholder="Enter Phone"
+                class="w-full p-3 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all duration-300"
+              />
+            </div>
+            <textarea
+              rows="4"
+              placeholder="Write a Message"
+              class="w-full p-3 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all duration-300"
+            ></textarea>
+
+            <button
+              type="submit"
+              class="btn-gradient text-black font-semibold px-6 py-3 rounded-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-full"
+            >
+              SEND A MESSAGE
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Decorative Arrow -->
+      <div
+        class="absolute right-1/2 top-1/3 translate-x-16 hidden lg:block animate-bounce-slow"
+      >
+        <i
+          class="fas fa-arrow-right text-amber-400 text-4xl transform rotate-45"
+        ></i>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-20 px-6 lg:px-10 max-w-7xl mx-auto bg-gray-900">
+      <!-- Heading -->
+      <div class="text-center mb-12 animate-slide-up">
+        <p class="text-amber-500 font-bold uppercase tracking-wider mb-3">
+          Latest Insights
+        </p>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">News & Articles</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Stay updated with the latest trends and insights in digital marketing
+        </p>
+      </div>
+
+      <!-- Blog Cards -->
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div
+          class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group"
+        >
+          <div class="relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf"
+              alt="Web Development"
+              class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div
+              class="absolute top-4 right-4 bg-amber-500 text-black text-sm font-bold px-3 py-2 rounded-lg shadow-md"
+            >
+              03<br />JUN
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 space-x-3 mb-3">
+              <span class="flex items-center space-x-1">
+                <i class="fas fa-user text-amber-500"></i>
+                <span>By Rimon</span>
+              </span>
+              <span class="flex items-center space-x-1">
+                <i class="fas fa-tag text-amber-500"></i>
+                <span>AI Content</span>
+              </span>
+            </div>
+
+            <h3
+              class="text-xl font-bold mb-4 leading-snug text-gray-900 group-hover:text-amber-600 transition-colors duration-300"
+            >
+              Web Development Essentials Every Business
+            </h3>
+
+            <div class="flex justify-between text-sm text-gray-600">
+              <a
+                href="blog.html"
+                class="text-amber-500 font-semibold hover:underline flex items-center"
+              >
+                Read More <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+              <span class="flex items-center space-x-1">
+                <i class="fas fa-comment"></i>
+                <span>No Comments</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group"
+        >
+          <div class="relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+              alt="AI Development"
+              class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div
+              class="absolute top-4 right-4 bg-amber-500 text-black text-sm font-bold px-3 py-2 rounded-lg shadow-md"
+            >
+              03<br />JUN
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 space-x-3 mb-3">
+              <span class="flex items-center space-x-1">
+                <i class="fas fa-user text-amber-500"></i>
+                <span>By Rimon</span>
+              </span>
+              <span class="flex items-center space-x-1">
+                <i class="fas fa-tag text-amber-500"></i>
+                <span>AI Technology</span>
+              </span>
+            </div>
+
+            <h3
+              class="text-xl font-bold mb-4 leading-snug text-gray-900 group-hover:text-amber-600 transition-colors duration-300"
+            >
+              How AI is Revolutionizing Web Development
+            </h3>
+
+            <div class="flex justify-between text-sm text-gray-600">
+              <a
+                href="blog.html"
+                class="text-amber-500 font-semibold hover:underline flex items-center"
+              >
+                Read More <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+              <span class="flex items-center space-x-1">
+                <i class="fas fa-comment"></i>
+                <span>No Comments</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group"
+        >
+          <div class="relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7"
+              alt="Hashtag Strategies"
+              class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div
+              class="absolute top-4 right-4 bg-amber-500 text-black text-sm font-bold px-3 py-2 rounded-lg shadow-md"
+            >
+              01<br />JUN
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-sm text-gray-500 space-x-3 mb-3">
+              <span class="flex items-center space-x-1">
+                <i class="fas fa-user text-amber-500"></i>
+                <span>By Kamrul</span>
+              </span>
+              <span class="flex items-center space-x-1">
+                <i class="fas fa-tag text-amber-500"></i>
+                <span>UI Design</span>
+              </span>
+            </div>
+
+            <h3
+              class="text-xl font-bold mb-4 leading-snug text-gray-900 group-hover:text-amber-600 transition-colors duration-300"
+            >
+              Effective Hashtag Strategies to Increase Reach
+            </h3>
+
+            <div class="flex justify-between text-sm text-gray-600">
+              <a
+                href="blog.html"
+                class="text-amber-500 font-semibold hover:underline flex items-center"
+              >
+                Read More <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+              <span class="flex items-center space-x-1">
+                <i class="fas fa-comment"></i>
+                <span>No Comments</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a
+          href="blog.html"
+          class="inline-flex items-center gap-2 bg-amber-500 text-black font-bold px-8 py-4 rounded-full hover:bg-amber-600 transition-all duration-300 transform hover:scale-105"
+        >
+          View All Articles
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white border-t border-gray-800">
+      <!-- CTA Section -->
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 py-12">
+        <div
+          class="relative bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl flex flex-col md:flex-row items-center justify-between p-10 overflow-hidden shadow-2xl"
+        >
+          <div class="flex items-center gap-6 mb-6 md:mb-0">
+            <div
+              class="hidden md:flex w-20 h-20 rounded-full bg-white/20 items-center justify-center"
+            >
+              <i class="fas fa-handshake text-white text-3xl"></i>
+            </div>
+            <div>
+              <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2">
+                Ready to Start Your Project?
+              </h2>
+              <p class="text-gray-800">Let's discuss how we can help your business grow</p>
+            </div>
+          </div>
+          <a
+            href="contact.html"
+            class="bg-gray-900 text-white font-bold py-4 px-8 rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            Get Started Today
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Main -->
+      <div class="border-t border-gray-700 pt-10 pb-16">
+        <div
+          class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+        >
+          <!-- MadAboutMarketing Logo Section -->
+          <div class="animate-slide-up">
+            <div class="flex items-center mb-4 space-x-2">
+              <div class="bg-amber-500 p-2 rounded animate-pulse-slow">
+                <i class="fas fa-chart-line text-black"></i>
+              </div>
+              <h2 class="text-2xl font-semibold">Mad About Marketing</h2>
+            </div>
+            <p class="text-gray-400 mb-5">
+              At vero eos et accusamus iusto odio dignissimos ducimus
+              blanditiis.
+            </p>
+            <form class="flex bg-white rounded-lg overflow-hidden shadow-lg">
+              <input
+                type="email"
+                placeholder="Email address"
+                class="flex-1 px-4 py-2 text-black outline-none"
+              />
+              <button
+                type="submit"
+                class="bg-amber-500 text-black px-4 text-lg hover:bg-amber-600 transition-colors duration-300"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="animate-slide-up" style="animation-delay: 0.2s">
+            <h3 class="text-lg font-semibold mb-4">Quick Link</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i
+                    class="fas fa-chevron-right text-amber-500 mr-2 text-xs"
+                  ></i>
+                  Features</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i
+                    class="fas fa-chevron-right text-amber-500 mr-2 text-xs"
+                  ></i>
+                  Pricing Plan</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i
+                    class="fas fa-chevron-right text-amber-500 mr-2 text-xs"
+                  ></i>
+                  Best Program</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i
+                    class="fas fa-chevron-right text-amber-500 mr-2 text-xs"
+                  ></i>
+                  Press Kit</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div class="animate-slide-up" style="animation-delay: 0.4s">
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i
+                    class="fas fa-chevron-right text-amber-500 mr-2 text-xs"
+                  ></i>
+                  About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i
+                    class="fas fa-chevron-right text-amber-500 mr-2 text-xs"
+                  ></i>
+                  Team Member</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i
+                    class="fas fa-chevron-right text-amber-500 mr-2 text-xs"
+                  ></i>
+                  Reviews</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i
+                    class="fas fa-chevron-right text-amber-500 mr-2 text-xs"
+                  ></i>
+                  Latest News</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="animate-slide-up" style="animation-delay: 0.6s">
+            <h3 class="text-lg font-semibold mb-4">Contact</h3>
+            <ul class="space-y-3 text-gray-400">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt text-amber-500 mr-3 mt-1"></i>
+                55 Main Street, 2nd block<br />Melbourne, Australia
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope text-amber-500 mr-3"></i>
+                support@gmail.com
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone text-amber-500 mr-3"></i> +000 (123) 44
+                55
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div
+        class="border-t border-gray-700 py-6 text-center text-gray-400 text-sm"
+      >
+        <p>© 2023 Mad About Marketing. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-8 right-8 bg-amber-500 text-white p-3 rounded-full shadow-lg hover:bg-amber-600 transition-all duration-300 transform translate-y-16 opacity-0"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="mobile-nav.js" defer></script>
+
+    <script>
+      // Back to top button
+      const backToTopButton = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove("translate-y-16", "opacity-0");
+          backToTopButton.classList.add("translate-y-0", "opacity-100");
+        } else {
+          backToTopButton.classList.remove("translate-y-0", "opacity-100");
+          backToTopButton.classList.add("translate-y-16", "opacity-0");
+        }
+      });
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Header scroll effect
+      const header = document.querySelector("header");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 100) {
+          header.classList.add("shadow-xl", "py-3");
+          header.classList.remove("py-4");
+        } else {
+          header.classList.remove("shadow-xl", "py-3");
+          header.classList.add("py-4");
+        }
+      });
+    </script>
+  </body>
+</html>

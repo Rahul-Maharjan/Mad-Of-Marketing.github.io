@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services | MadAboutMarketing</title>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              "fade-in": "fadeIn 0.8s ease-in-out",
+              "slide-up": "slideUp 0.8s ease-out",
+              "slide-left": "slideLeft 0.8s ease-out",
+              "scale-up": "scaleUp 0.6s ease-out",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              slideUp: {
+                "0%": { transform: "translateY(20px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
+              slideLeft: {
+                "0%": { transform: "translateX(-20px)", opacity: "0" },
+                "100%": { transform: "translateX(0)", opacity: "1" },
+              },
+              scaleUp: {
+                "0%": { transform: "scale(0.95)", opacity: "0" },
+                "100%": { transform: "scale(1)", opacity: "1" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #ffffff;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #f59e0b;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d97706;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .btn-gradient {
+        background: linear-gradient(90deg, #f59e0b, #fbbf24);
+      }
+      .btn-gradient:hover {
+        background: linear-gradient(90deg, #d97706, #f59e0b);
+      }
+    </style>
+  </head>
+
+    <!-- HEADER -->
+    <header
+      class="w-full text-white bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800 px-6 py-4 fixed top-0 z-50 shadow-lg transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <div class="rounded">
+            <img
+              src="./images/logo.jpg"
+              alt="MadAboutMarketing Logo"
+              class="rounded w-6 h-6"
+            />
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight">Mad About Marketing</h1>
+        </div>
+
+        <!-- Nav -->
+        <nav class="hidden md:flex space-x-8 text-sm font-semibold">
+          <a
+            href="index.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            HOME
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="services.html"
+            class="text-amber-400 transition-all duration-300 relative group"
+          >
+            SERVICES
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-amber-400"></span>
+          </a>
+          <a
+            href="projects.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            PROJECTS
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="blog.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            BLOG
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="contact.html"
+            class="hover:text-amber-400 transition-all duration-300 relative group"
+          >
+            CONTACT
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </nav>
+
+        <!-- Call -->
+        <div
+          class="hidden md:flex items-center space-x-3 bg-[#2B2B2B]/50 rounded-full px-4 py-2 hover:bg-[#2B2B2B]/70 transition-all duration-300"
+        >
+          <div class="bg-amber-500 p-3 rounded-full w-10 h-10 flex items-center justify-center">
+            <i class="fas fa-phone text-black"></i>
+          </div>
+          <div>
+            <p class="text-xs">Call Anytime</p>
+            <p class="font-bold">+88 01750050088</p>
+          </div>
+        </div>
+
+        <!-- Mobile -->
+        <button
+          id="mobileMenuButton"
+          aria-controls="mobileNav"
+          aria-expanded="false"
+          class="md:hidden flex flex-col space-y-1"
+        >
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+        </button>
+        
+        <!-- Mobile nav panel -->
+        <div
+          id="mobileNav"
+          class="fixed inset-0 z-40 md:hidden pointer-events-none"
+          aria-hidden="true"
+        >
+          <div
+            id="mobileNavPanel"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center space-x-2">
+                <div class="bg-amber-500 p-1 rounded">
+                  <img
+                    src="images/logo.jpg"
+                    alt="MadAboutMarketing Logo"
+                    class="w-6 h-6"
+                  />
+                </div>
+                <h2 class="font-bold">Mad About Marketing</h2>
+              </div>
+              <button
+                id="mobileClose"
+                aria-label="Close menu"
+                class="text-gray-300"
+              >
+                ✕
+              </button>
+            </div>
+            <nav class="flex flex-col gap-4">
+              <a href="index.html" class="text-white font-semibold">Home</a>
+              <a href="services.html" class="text-amber-400 font-semibold">Services</a>
+              <a href="projects.html" class="text-white font-semibold">Projects</a>
+              <a href="blog.html" class="text-white font-semibold">Blog</a>
+              <a href="contact.html" class="text-white font-semibold">Contact</a>
+            </nav>
+          </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800 pt-32 pb-20"
+    >
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="animate-slide-up">
+          <p class="text-amber-400 font-semibold uppercase tracking-widest mb-3">
+            Our Services
+          </p>
+          <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+            Comprehensive Digital <br />
+            <span class="text-white">Marketing Solutions</span>
+          </h1>
+          <p class="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed">
+            We provide end-to-end digital marketing services designed to elevate your brand,
+            increase visibility, and drive measurable results.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN SERVICES SECTION -->
+    <section class="py-20 bg-gray-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- Service Card 1 -->
+          <div
+            class="bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 transform hover:-translate-y-3 group animate-fade-in"
+          >
+            <div class="relative mb-6 overflow-hidden rounded-xl">
+              <img
+                src="images/service1.jpg"
+                alt="Website Design"
+                class="rounded-xl w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute bottom-4 left-4 bg-amber-500 text-white p-3 rounded-full shadow-lg"
+              >
+                <i class="fas fa-laptop-code text-xl"></i>
+              </div>
+            </div>
+            <h3
+              class="text-2xl font-bold mb-4 text-white group-hover:text-amber-400 transition-colors duration-300"
+            >
+              Website Design (UI/UX)
+            </h3>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              Create stunning, user-friendly websites that engage visitors and convert them into customers. Our designs focus on aesthetics and functionality.
+            </p>
+            <ul class="space-y-3 text-sm text-gray-300 mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Responsive Web Design
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                User Experience Optimization
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Modern UI Development
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Cross-Browser Compatibility
+              </li>
+            </ul>
+            <a
+              href="service-detail.html?service=website-design"
+              class="inline-flex items-center text-amber-500 font-semibold hover:text-amber-400 transition-colors duration-300 group"
+            >
+              Learn More
+              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+            </a>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div
+            class="bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 transform hover:-translate-y-3 group animate-fade-in"
+            style="animation-delay: 0.1s"
+          >
+            <div class="relative mb-6 overflow-hidden rounded-xl">
+              <img
+                src="images/service2.jpg"
+                alt="Digital Marketing"
+                class="rounded-xl w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute bottom-4 left-4 bg-amber-500 text-white p-3 rounded-full shadow-lg"
+              >
+                <i class="fas fa-bullhorn text-xl"></i>
+              </div>
+            </div>
+            <h3
+              class="text-2xl font-bold mb-4 text-white group-hover:text-amber-400 transition-colors duration-300"
+            >
+              Digital Marketing
+            </h3>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              Boost your online presence with data-driven marketing strategies that deliver real results and maximize your ROI.
+            </p>
+            <ul class="space-y-3 text-sm text-gray-300 mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Social Media Marketing
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Content Marketing Strategy
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Email Marketing Campaigns
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                PPC Advertising
+              </li>
+            </ul>
+            <a
+              href="service-detail.html?service=digital-marketing"
+              class="inline-flex items-center text-amber-500 font-semibold hover:text-amber-400 transition-colors duration-300 group"
+            >
+              Learn More
+              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+            </a>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div
+            class="bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 transform hover:-translate-y-3 group animate-fade-in"
+            style="animation-delay: 0.2s"
+          >
+            <div class="relative mb-6 overflow-hidden rounded-xl">
+              <img
+                src="images/service3.jpg"
+                alt="SEO Optimization"
+                class="rounded-xl w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute bottom-4 left-4 bg-amber-500 text-white p-3 rounded-full shadow-lg"
+              >
+                <i class="fas fa-search text-xl"></i>
+              </div>
+            </div>
+            <h3
+              class="text-2xl font-bold mb-4 text-white group-hover:text-amber-400 transition-colors duration-300"
+            >
+              SEO Optimization
+            </h3>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              Improve your search engine rankings and drive organic traffic with our comprehensive SEO strategies and techniques.
+            </p>
+            <ul class="space-y-3 text-sm text-gray-300 mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Keyword Research & Analysis
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                On-Page SEO Optimization
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Technical SEO Audits
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Link Building Campaigns
+              </li>
+            </ul>
+            <a
+              href="service-detail.html?service=seo-optimization"
+              class="inline-flex items-center text-amber-500 font-semibold hover:text-amber-400 transition-colors duration-300 group"
+            >
+              Learn More
+              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+            </a>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div
+            class="bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 transform hover:-translate-y-3 group animate-fade-in"
+            style="animation-delay: 0.3s"
+          >
+            <div class="relative mb-6 overflow-hidden rounded-xl">
+              <img
+                src="images/service4.jpg"
+                alt="Branding & Design"
+                class="rounded-xl w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute bottom-4 left-4 bg-amber-500 text-white p-3 rounded-full shadow-lg"
+              >
+                <i class="fas fa-palette text-xl"></i>
+              </div>
+            </div>
+            <h3
+              class="text-2xl font-bold mb-4 text-white group-hover:text-amber-400 transition-colors duration-300"
+            >
+              Branding & Creative Design
+            </h3>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              Build a memorable brand identity that resonates with your audience and stands out in the marketplace.
+            </p>
+            <ul class="space-y-3 text-sm text-gray-300 mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Logo & Brand Identity
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Marketing Materials Design
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Brand Guidelines
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Visual Content Creation
+              </li>
+            </ul>
+            <a
+              href="service-detail.html?service=branding-design"
+              class="inline-flex items-center text-amber-500 font-semibold hover:text-amber-400 transition-colors duration-300 group"
+            >
+              Learn More
+              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+            </a>
+          </div>
+
+          <!-- Service Card 5 -->
+          <div
+            class="bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 transform hover:-translate-y-3 group animate-fade-in"
+            style="animation-delay: 0.4s"
+          >
+            <div class="relative mb-6 overflow-hidden rounded-xl">
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+                alt="Analytics"
+                class="rounded-xl w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute bottom-4 left-4 bg-amber-500 text-white p-3 rounded-full shadow-lg"
+              >
+                <i class="fas fa-chart-line text-xl"></i>
+              </div>
+            </div>
+            <h3
+              class="text-2xl font-bold mb-4 text-white group-hover:text-amber-400 transition-colors duration-300"
+            >
+              Analytics & Reporting
+            </h3>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              Track, measure, and optimize your marketing performance with detailed analytics and actionable insights.
+            </p>
+            <ul class="space-y-3 text-sm text-gray-300 mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Google Analytics Setup
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Performance Tracking
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Custom Dashboard Creation
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Monthly Reports & Insights
+              </li>
+            </ul>
+            <a
+              href="service-detail.html?service=analytics-reporting"
+              class="inline-flex items-center text-amber-500 font-semibold hover:text-amber-400 transition-colors duration-300 group"
+            >
+              Learn More
+              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+            </a>
+          </div>
+
+          <!-- Service Card 6 -->
+          <div
+            class="bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 transform hover:-translate-y-3 group animate-fade-in"
+            style="animation-delay: 0.5s"
+          >
+            <div class="relative mb-6 overflow-hidden rounded-xl">
+              <img
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984"
+                alt="Maintenance"
+                class="rounded-xl w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute bottom-4 left-4 bg-amber-500 text-white p-3 rounded-full shadow-lg"
+              >
+                <i class="fas fa-tools text-xl"></i>
+              </div>
+            </div>
+            <h3
+              class="text-2xl font-bold mb-4 text-white group-hover:text-amber-400 transition-colors duration-300"
+            >
+              Maintenance & Support
+            </h3>
+            <p class="text-gray-400 mb-6 leading-relaxed">
+              Keep your website running smoothly with our comprehensive maintenance and technical support services.
+            </p>
+            <ul class="space-y-3 text-sm text-gray-300 mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Regular Updates & Patches
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Security Monitoring
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                Performance Optimization
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-amber-500 mr-3"></i>
+                24/7 Technical Support
+              </li>
+            </ul>
+            <a
+              href="service-detail.html?service=maintenance-support"
+              class="inline-flex items-center text-amber-500 font-semibold hover:text-amber-400 transition-colors duration-300 group"
+            >
+              Learn More
+              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-amber-800">
+      <div class="max-w-5xl mx-auto px-6 text-center animate-scale-up">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-6">
+          Ready to Transform Your Business?
+        </h2>
+        <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+          Let's discuss how our services can help you achieve your goals. Get in touch with our team today.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="contact.html"
+            class="btn-gradient text-black font-bold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/30 transform hover:-translate-y-1 inline-flex items-center"
+          >
+            GET STARTED NOW
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+          <a
+            href="projects.html"
+            class="border-2 border-amber-500 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-amber-500 hover:text-black transform hover:-translate-y-1"
+          >
+            VIEW OUR WORK
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+      <!-- Footer Main -->
+      <div class="border-t border-gray-700 pt-10 pb-16">
+        <div
+          class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+        >
+          <!-- MadAboutMarketing Logo Section -->
+          <div>
+            <div class="flex items-center mb-4 space-x-2">
+              <div class="bg-amber-500 p-2 rounded">
+                <i class="fas fa-chart-line text-black"></i>
+              </div>
+              <h2 class="text-2xl font-semibold">Mad About Marketing</h2>
+            </div>
+            <p class="text-gray-400 mb-5">
+              Delivering innovative digital marketing solutions that drive growth and success.
+            </p>
+            <form class="flex bg-white rounded-lg overflow-hidden shadow-lg">
+              <input
+                type="email"
+                placeholder="Email address"
+                class="flex-1 px-4 py-2 text-black outline-none"
+              />
+              <button
+                type="submit"
+                class="bg-amber-500 text-black px-4 text-lg hover:bg-amber-600 transition-colors duration-300"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Link</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="projects.html"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blog.html"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  Team Member</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  Reviews</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-amber-500 transition-colors duration-300 flex items-center"
+                  ><i class="fas fa-chevron-right text-amber-500 mr-2 text-xs"></i>
+                  Latest News</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact</h3>
+            <ul class="space-y-3 text-gray-400">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt text-amber-500 mr-3 mt-1"></i>
+                55 Main Street, 2nd block<br />Melbourne, Australia
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope text-amber-500 mr-3"></i>
+                support@gmail.com
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone text-amber-500 mr-3"></i> +000 (123) 44 55
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div
+        class="border-t border-gray-700 py-6 text-center text-gray-400 text-sm"
+      >
+        <p>© 2023 Mad About Marketing. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-8 right-8 bg-amber-500 text-white p-3 rounded-full shadow-lg hover:bg-amber-600 transition-all duration-300 transform translate-y-16 opacity-0"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="mobile-nav.js"></script>
+
+    <script>
+      // Back to top button
+      const backToTopButton = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove("translate-y-16", "opacity-0");
+          backToTopButton.classList.add("translate-y-0", "opacity-100");
+        } else {
+          backToTopButton.classList.remove("translate-y-0", "opacity-100");
+          backToTopButton.classList.add("translate-y-16", "opacity-0");
+        }
+      });
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Header scroll effect
+      const header = document.querySelector("header");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 100) {
+          header.classList.add("shadow-xl", "py-3");
+          header.classList.remove("py-4");
+        } else {
+          header.classList.remove("shadow-xl", "py-3");
+          header.classList.add("py-4");
+        }
+      });
+    </script>
+  </body>
+</html>
