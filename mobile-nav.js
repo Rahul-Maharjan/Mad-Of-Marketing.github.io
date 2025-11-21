@@ -6,14 +6,20 @@
     const btns = document.querySelectorAll('#mobileMenuButton');
     if(!overlay || !panel) return;
     if(open){
+      // Show menu
       overlay.classList.remove('pointer-events-none');
+      overlay.classList.add('bg-black', 'bg-opacity-50');
       overlay.setAttribute('aria-hidden','false');
       panel.classList.remove('translate-x-full');
       panel.classList.add('translate-x-0');
       btns.forEach(b=>b.setAttribute('aria-expanded','true'));
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
     } else {
+      // Hide menu
       panel.classList.remove('translate-x-0');
       panel.classList.add('translate-x-full');
+      overlay.classList.remove('bg-black', 'bg-opacity-50');
       overlay.setAttribute('aria-hidden','true');
       // Wait for transition end then disable pointer events
       panel.addEventListener('transitionend', function handler(){
@@ -21,6 +27,8 @@
         panel.removeEventListener('transitionend', handler);
       });
       btns.forEach(b=>b.setAttribute('aria-expanded','false'));
+      // Restore body scroll
+      document.body.style.overflow = '';
     }
   }
 
