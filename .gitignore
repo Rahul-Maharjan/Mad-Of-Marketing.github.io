@@ -1,0 +1,267 @@
+# ===========================================
+# Mad About Marketing - Professional .gitignore
+# ===========================================
+
+# Operating System Files
+# -----------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# IDE and Editor Files
+# --------------------
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Development Dependencies
+# ------------------------
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Ruby
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
+
+# Build and Distribution Files
+# ----------------------------
+dist/
+build/
+out/
+target/
+*.zip
+*.tar.gz
+*.tar.bz2
+*.rar
+*.7z
+
+# Documentation and Reports
+# -------------------------
+# Keep main documentation but ignore generated reports
+Project_Documentation_Report.md
+TaskTime_Professional_Report.docx
+*.docx
+*.doc
+*.pdf
+*.xlsx
+*.xls
+*.csv
+!README.md
+!CHANGELOG.md
+!LICENSE.md
+
+# Logs and Debug Files
+# --------------------
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime and Cache Files
+# ------------------------
+*.pid
+*.seed
+*.pid.lock
+.nyc_output
+.grunt
+.sass-cache/
+.node-repl-history
+*.tgz
+.npm-cache/
+.eslintcache
+.parcel-cache/
+.cache/
+
+# Environment and Configuration
+# -----------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+config.local.js
+*.local
+
+# Database Files
+# --------------
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Media and Asset Files (Large)
+# ------------------------------
+# Ignore large media files but keep essential ones
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.flv
+*.wmv
+*.webm
+*.m4v
+*.3gp
+
+# Keep web-optimized images
+!*.jpg
+!*.jpeg
+!*.png
+!*.gif
+!*.svg
+!*.webp
+!*.ico
+
+# Backup and Temporary Files
+# ---------------------------
+*.bak
+*.backup
+*.swp
+*.tmp
+*~
+.#*
+.DS_Store?
+
+# Security Files
+# --------------
+*.pem
+*.key
+*.cert
+*.p12
+*.pfx
+id_rsa
+id_dsa
+*.ppk
+
+# Miscellaneous
+# -------------
+.vscode-test
+coverage/
+.nyc_output/
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Project Specific Ignores
+# -------------------------
+# Ignore client-specific documents and sensitive info
+client_credentials/
+invoices/
+contracts/
+private_notes/
+sensitive_data/
+
+# Ignore compressed project archives
+Mad-Of-Marketing*.zip
+Mad-Of-Marketing*.tar.gz
+project_backup_*
+
+# Ignore generated reports and analytics
+analytics_reports/
+performance_reports/
+seo_reports/
+
+# ===========================================
+# End of .gitignore
+# ===========================================
